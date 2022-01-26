@@ -28,9 +28,7 @@
         <div class="col-md-5" *ngIf="interestTabIndex!=1">
           <div class="form-group row">
             <div class="col-md-5 col-12 form-column">
-              <label class="start pull-left"
-                >Interest Code<span class="warning">*</span></label
-              >
+              <label class="start pull-left" >Interest Code<span class="warning">*</span></label>
             </div>
             <div class="col-md-6 col-7 form-column">
               <input type="text" class="form-control"  [(ngModel)]="interestCode" name="interestCode"/>
@@ -42,14 +40,8 @@
         </div>
 
         <div class="col-md-2">
-          <button
-            mat-raised-button
-            color="primary"
-            class="btn go mx-auto d-block"
-            type="button"
-            (click)="navigate()"
-          >
-            GO
+          <button mat-raised-button color="primary" class="btn go mx-auto d-block"
+            type="button" (click)="navigate()"> GO
           </button>
         </div>
       </div>
