@@ -1,0 +1,48 @@
+<mat-card class="container-fluid">
+    <mat-card-header>
+      <div>Group Registration</div>
+  </mat-card-header>
+  <mat-divider></mat-divider> 
+  
+  <div class="container-fluid mt-4">
+    <form class="form">
+  <div class="row">
+    <div class="col-md-5">
+      <div class="form-group">
+        <div class="col-md-6 col-sm-12 form-column ">
+         <label class="start pull-left">Function<span class="warning">*</span></label>
+        </div>
+        <div class="col-md-6 col-sm-12 form-column ">
+          <select >
+            <option value="" disabled>-- Choose Function --</option>
+            <option >ADD</option>
+            <option >INQUIRE</option>
+            <option >MODIFY</option>
+            <option >DELETE</option>
+          </select>
+        </div>
+     </div> 
+    </div>
+    <div class="col-md-5">
+      <div  class="form-group">
+        <div class="col-md-6 col-sm-12 form-column ">
+         <label class="start pull-left">Group Code<span class="warning">*</span></label>
+        </div>
+        <div class="col-md-6 col-sm-12 form-column ">
+          <input type="text" class="form-control" />
+            <mat-icon>search</mat-icon>
+        </div>
+     </div>    
+    </div>
+
+       <div class="col-md-2">
+    <button mat-raised-button color="primary" class="btn go mx-auto d-block" type="button">GO</button>
+<!-- <button mat-raised-button color="primary" type="button" class="btn go mx-auto d-block">GO</button> -->
+      </div>
+  
+  </div>
+
+    <br />
+  </form>
+    </div>
+  </mat-card>

@@ -1,0 +1,18 @@
+ .form-control{
+    width: 80%;
+    height: 25px !important;
+    font-size: 12px;
+    font-family: monospace;
+    border-radius:  0px;
+  }
+  .form-label{
+       width: 80%;
+    height: 25px !important;
+    font-size: 15px;
+    font-family: monospace;
+    border-radius:  0px;
+  }
+
+      .go{
+    height: 30px;
+  }

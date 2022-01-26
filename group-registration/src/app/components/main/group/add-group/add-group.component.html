@@ -1,0 +1,261 @@
+<mat-card class="container-fluid">
+  <mat-card-header>
+    <div>Register a Group</div>
+  </mat-card-header>
+  <mat-divider></mat-divider>
+<form class="form" (ngSubmit)="submitGroup()">
+<mat-tab-group>
+  <mat-tab label="Group">
+<div class="container-fluid mt-4">
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group row">
+            <div class="col-md-5 col-sm-12 form-column ">
+              <label class="form-label start pull-left">Group Name<span class="warning">*</span></label>
+            </div>
+            <div class="col-md-6 col-8 form-column ">
+              <input [(ngModel)]="groupName" name="groupName" type="text" class="form-control" />
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group row">
+            <div class="col-md-5 col-sm-12 form-column ">
+              <label class="form-label start pull-left">Group Email<span class="warning">*</span></label>
+            </div>
+            <div class="col-md-6 col-8 form-column ">
+              <input [(ngModel)]="groupEMail" name="groupEMail" type="email" class="form-control" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group row">
+            <div class="col-md-5 col-sm-12 form-column ">
+              <label class="form-label start pull-left">Group Code<span class="warning">*</span></label>
+            </div>
+            <div class="col-md-6 col-8 form-column ">
+              <input [(ngModel)]="groupCode" name="groupCode" type="text" class="form-control" />
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group row">
+            <div class="col-md-5 col-sm-12 form-column ">
+              <label class="form-label start pull-left">Sn<span class="warning">*</span></label>
+            </div>
+            <div class="col-md-6 col-8 form-column ">
+              <input type="text" class="form-control" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group row">
+            <div class="col-md-5 col-sm-12 form-column ">
+              <label class="form-label start pull-left">Chair Person<span class="warning">*</span></label>
+            </div>
+            <div class="col-md-6 col-8 form-column ">
+              <input [(ngModel)]="chairperson" name="chairperson" readonly type="text" class="form-control" />
+            </div>
+            <div class="col-md-1 col-2">
+              <mat-icon (click)="chbivsmLookup()">search</mat-icon>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group row">
+            <div class="col-md-5 col-sm-12 form-column ">
+              <label class="form-label start pull-left">Secretary<span class="warning">*</span></label>
+            </div>
+            <div class="col-md-6 col-8 form-column ">
+              <input [(ngModel)]="secretary" name="secretary" readonly type="text" class="form-control" />
+            </div>
+            <div class="col-md-1 col-2">
+              <mat-icon (click)="shbivsmLookup()">search</mat-icon>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group row">
+            <div class="col-md-5 col-sm-12 form-column ">
+              <label class="form-label start pull-left">Treasurer<span class="warning">*</span></label>
+            </div>
+            <div class="col-md-6 col-8 form-column ">
+              <input [(ngModel)]="treasurer" name="treasurer"  readonly type="text" class="form-control" />
+            </div>
+            <div class="col-md-1 col-2">
+              <mat-icon (click)="thbivsmLookup()">search</mat-icon>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group row">
+            <div class="col-md-5 col-sm-12 form-column ">
+              <label class="form-label start pull-left">Group Address<span class="warning">*</span></label>
+            </div>
+            <div class="col-md-6 col-8 form-column ">
+              <input [(ngModel)]="groupAddress" name="groupAddress" type="text" class="form-control" />
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group row">
+            <div class="col-md-5 col-sm-12 form-column ">
+              <label class="form-label start pull-left">Max Members (subgroup)<span class="warning">*</span></label>
+            </div>
+            <div class="col-md-6 col-8 form-column ">
+              <input [(ngModel)]="allowedMembers" name="allowedMembers" type="number" class="form-control" />
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group row">
+            <div class="col-md-5 col-sm-12 form-column ">
+              <label class="form-label start pull-left">Minimum SubGroups<span class="warning">*</span></label>
+            </div>
+            <div class="col-md-6 col-8 form-column ">
+              <input [(ngModel)]="maxAllowedSubGroups" name="maxAllowedSubGroups" type="number" class="form-control" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group row">
+            <div class="col-md-5 col-sm-12 form-column ">
+              <label class="form-label start pull-left">Formation Date<span class="warning">*</span></label>
+            </div>
+            <div class="col-md-6 col-8 form-column ">
+              <input [(ngModel)]="formationDate" name="formationDate" type="date" class="form-control" />
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group row">
+            <div class="col-md-5 col-sm-12 form-column ">
+              <label class="form-label start pull-left">Group Status<span class="warning">*</span></label>
+            </div>
+            <div class="col-md-6 col-8 form-column ">
+              <input [(ngModel)]="groupStatus" name="groupStatus" type="text" class="form-control" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group row">
+            <div class="col-md-5 col-sm-12 form-column ">
+              <label class="form-label start pull-left">First Meeting<span class="warning">*</span></label>
+            </div>
+            <div class="col-md-6 col-8 form-column ">
+              <input [(ngModel)]="firstMeeting" name="firstMeeting" type="date" class="form-control" />
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group row">
+            <div class="col-md-5 col-sm-12 form-column ">
+              <label class="form-label start pull-left">Meeting Place<span class="warning">*</span></label>
+            </div>
+            <div class="col-md-6 col-8 form-column ">
+              <input [(ngModel)]="meetingPlace" name="meetingPlace" type="text" class="form-control" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+  </div>
+  </mat-tab>
+
+
+
+
+  <mat-tab *ngFor="let subgroup of subGroups; let i=index " label="Sub-Group {{i+1}}">
+<div class="container-fluid mt-4">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group row">
+            <div class="col-md-5 col-sm-12 form-column ">
+              <label class="form-label start pull-left">SubGroup Name<span class="warning">*</span></label>
+            </div>
+            <div class="col-md-6 col-8 form-column ">
+              <input [(ngModel)]="groupName" name="groupName" type="text" class="form-control" />
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group row">
+            <div class="col-md-5 col-sm-12 form-column ">
+              <label class="form-label start pull-left">Group Region<span class="warning">*</span></label>
+            </div>
+            <div class="col-md-6 col-8 form-column ">
+              <input [(ngModel)]="groupEMail" name="groupEMail" type="email" class="form-control" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+            <div class="row">
+        <div class="col-md-6">
+          <div class="form-group row">
+            <div class="col-md-5 col-sm-12 form-column ">
+              <label class="form-label start pull-left">SubGroup Objective<span class="warning">*</span></label>
+            </div>
+            <div class="col-md-6 col-8 form-column ">
+              <input [(ngModel)]="groupName" name="groupName" type="text" class="form-control" />
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group row">
+            <div class="col-md-5 col-sm-12 form-column ">
+              <label class="form-label start pull-left">SubGroup Code<span class="warning">*</span></label>
+            </div>
+            <div class="col-md-6 col-8 form-column ">
+              <input [(ngModel)]="groupEMail" name="groupEMail" type="email" class="form-control" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+<div class="row">
+      <div class="col-md-1 offset-md-10 col-4">
+    <button (click)="addSubGroup()" mat-raised-button color="primary" class="btn go mx-auto d-block" type="button">Add Sub group</button>
+      </div>
+
+</div>
+
+
+</div>
+  </mat-tab>
+
+
+  <mat-tab label="Submission">
+    <div class="row container-fluid mt-4">
+      <div class="col-md-1 col-4">
+    <button mat-raised-button color="warn" class="btn go mx-auto d-block" type="reset">Reset</button>
+      </div>
+
+      <div class="col-md-1 col-4">
+    <button mat-raised-button class="btn bg-success go mx-auto d-block text-light" type="submit">Submit</button>
+      </div>
+    </div>
+
+  </mat-tab>
+
+</mat-tab-group>
+    </form>
+
+  
+</mat-card>

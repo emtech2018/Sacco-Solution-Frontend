@@ -1,0 +1,190 @@
+<mat-card class="container-fluid">
+    <div>
+        <h3  class="text-center">Add A Product</h3>
+    </div>
+    
+    <mat-divider></mat-divider>
+  <form class="form" (ngSubmit)="submitProduct()">
+
+
+<div class="container-fluid mt-4">
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group row">
+          <div class="col-md-5 col-sm-12 form-column ">
+            <label class="form-label start pull-left">Scheme Code<span class="warning">*</span></label>
+          </div>
+          <div class="col-md-6 col-8 form-column ">
+            <input name="schemeCode" oninput ="this.value=this.value.toUpperCase()"
+            [(ngModel)]="schemeCode" type="text" class="form-control" />
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group row">
+          <div class="col-md-5 col-sm-12 form-column ">
+            <label class="form-label start pull-left">Product Description<span class="warning">*</span></label>
+          </div>
+          <div class="col-md-6 col-8 form-column ">
+            <input type="text" name="productDescription" oninput ="this.value=this.value.toUpperCase()"
+            [(ngModel)]="productDescription" class="form-control" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group row">
+          <div class="col-md-5 col-sm-12 form-column ">
+            <label class="form-label start pull-left">Branch Code<span class="warning">*</span></label>
+          </div>
+          <div class="col-md-6 col-8 form-column ">
+            <input readonly name="solCode"
+            [(ngModel)]="solCode" type="text" class="form-control" />
+          </div>
+          <div class="col-md-1 col-2">
+            <mat-icon (click)="branchLookup()">search</mat-icon>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group row">
+          <div class="col-md-5 col-sm-12 form-column ">
+            <label class="form-label start pull-left">Interest Code<span class="warning">*</span></label>
+          </div>
+          <div class="col-md-6 col-8 form-column ">
+            <input readonly name="interestCode"
+            [(ngModel)]="interestCode" type="text" class="form-control" />
+          </div>
+          <div class="col-md-1 col-2">
+            <mat-icon (click)="interestLookup()">search</mat-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group row">
+          <div class="col-md-5 col-sm-12 form-column ">
+            <label class="form-label start pull-left">Processing Fee<span class="warning">*</span></label>
+          </div>
+          <div class="col-md-6 col-8 form-column ">
+            <input name="processingFee"
+            [(ngModel)]="processingFee" type="number" class="form-control" />
+          </div>
+
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group row">
+          <div class="col-md-5 col-sm-12 form-column ">
+            <label class="form-label start pull-left">Intake Fee<span class="warning">*</span></label>
+          </div>
+          <div class="col-md-6 col-8 form-column ">
+            <input name="intakeFee"
+            [(ngModel)]="intakeFee" type="number" class="form-control" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group row">
+          <div class="col-md-5 col-sm-12 form-column ">
+            <label class="form-label start pull-left">Interest Base<span class="warning">*</span></label>
+          </div>
+          <div class="col-md-6 col-8 form-column ">
+            <select readonly name="interestBase"
+            [(ngModel)]="interestBase">
+            <option value="D">DAILY</option>
+            <option value="W">WEEKLY</option>
+            <option value="F">FORTNIGHTLY</option>
+            <option value="M">MONTHLY</option>
+            <option value="Q">QUARTERLY</option>
+            <option value="A">ANNUALLY</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group row">
+          <div class="col-md-5 col-sm-12 form-column ">
+            <label class="form-label start pull-left">Calculation Base<span class="warning">*</span></label>
+          </div>
+          <div class="col-md-6 col-8 form-column ">
+            <select readonly name="calculationBase"
+            [(ngModel)]="calculationBase">
+            <option value="D">DAILY</option>
+            <option value="W">WEEKLY</option>
+            <option value="F">FORTNIGHTLY</option>
+            <option value="M">MONTHLY</option>
+            <option value="Q">QUARTERLY</option>
+            <option value="A">ANNUALLY</option>
+
+            </select>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group row">
+          <div class="col-md-5 col-sm-12 form-column ">
+            <label class="form-label start pull-left">Repayment Account<span class="warning">*</span></label>
+          </div>
+          <div class="col-md-6 col-8 form-column ">
+            <input readonly name="repaymentAccount"
+            [(ngModel)]="repaymentAccount" type="text" class="form-control" />
+          </div>
+          <div class="col-md-1 col-2">
+            <mat-icon (click)="accountLookup()">search</mat-icon>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group row">
+          <div class="col-md-5 col-sm-12 form-column ">
+            <label class="form-label start pull-left">Repayment Base<span class="warning">*</span></label>
+          </div>
+          <div class="col-md-6 col-8 form-column ">
+            <select readonly name="repaymentBasis"
+            [(ngModel)]="repaymentBasis">
+            <option value="D">DAILY</option>
+            <option value="W">WEEKLY</option>
+            <option value="F">FORTNIGHTLY</option>
+            <option value="M">MONTHLY</option>
+            <option value="Q">QUARTERLY</option>
+            <option value="A">ANNUALLY</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group row">
+          <div class="col-md-5 col-sm-12 form-column ">
+            <label class="form-label start pull-left">Late Repayment Fee<span class="warning">*</span></label>
+          </div>
+          <div class="col-md-6 col-8 form-column ">
+            <input type="number" name="lateRepaymentFee"
+            [(ngModel)]="lateRepaymentFee" class="form-control" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row container-fluid mt-4">
+        <div class="col-md-1 offset-md-10 col-4">
+      <button mat-raised-button color="warn" class="btn go mx-auto d-block" type="reset">Reset</button>
+        </div>
+  
+        <div class="col-md-1 col-4">
+      <button mat-raised-button class="btn bg-success go mx-auto d-block text-light" type="submit">Submit</button>
+        </div>
+      </div>
+</div>
+</form>
+</mat-card>
