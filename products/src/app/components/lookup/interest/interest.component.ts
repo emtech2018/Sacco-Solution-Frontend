@@ -4,7 +4,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
-import { Interest } from 'src/app/interfaces/interest';
+import { Interest } from 'src/app/interfaces/interest';   
 import { InterestService } from 'src/app/services/interest.service';
 
 @Component({
