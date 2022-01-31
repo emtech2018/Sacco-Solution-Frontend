@@ -5,6 +5,7 @@ import { InterestComponent } from 'src/app/components/lookup/interest/interest.c
 import { AccountComponent } from 'src/app/components/lookup/account/account.component';
 
 import { ProductsService } from 'src/app/services/products.service';
+import { Router } from '@angular/router';
 
 import {
   MatDialog,
@@ -33,6 +34,7 @@ export class ProductAddComponent implements OnInit {
   solCode!: string;
 
   constructor(
+    private router: Router,
     private dialog: MatDialog,
     private productsservice: ProductsService
   ) {
@@ -49,7 +51,7 @@ export class ProductAddComponent implements OnInit {
     this.product.processingFee = this.processingFee;
     this.product.lateRepaymentFee = this.lateRepaymentFee;
     this.product.calculationBase = this.calculationBase;
-    this.product.repaymentAccount = this.repaymentAccount;
+    this.product.interestRepaymentAccount = this.repaymentAccount;
     this.product.interestCode = this.interestCode;
     this.product.intakeFee = this.intakeFee;
     this.product.solCode = this.solCode;
@@ -57,20 +59,29 @@ export class ProductAddComponent implements OnInit {
     this.product.deletedFlag = 'N';
     this.product.postedFlag = 'Y';
     this.product.postedBy = 'KAMAU';
-    this.product.modifiedBy="KAMAU";
+    this.product.modifiedBy = 'KAMAU';
     this.product.postedTime = new Date();
     this.product.verifiedFlag = 'Y';
 
     console.log(this.product);
 
     this.productsservice.createProduct(this.product).subscribe(
-
       (data) => {
-        console.log(data.message)
+        this.router.navigate(['success'], {
+          state: {
+            message: data.message,
+          },
+        });
+        console.log(data.message);
       },
       (error) => {
+        this.router.navigate(['failure'], {
+          state: {
+            message: error.error.message,
+          },
+        });
 
-     console.log(error.error.message)
+        console.log(error.error.message);
       }
     );
   }

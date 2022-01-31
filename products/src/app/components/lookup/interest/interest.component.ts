@@ -29,7 +29,7 @@ export class InterestComponent implements OnInit {
       (data) => {
         this.isLoadingResults = false;
         console.log(data.entity)
-        this.dataSource = new MatTableDataSource(data.entity.t);
+        this.dataSource = new MatTableDataSource(data.entity);
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
         console.log(data);

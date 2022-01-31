@@ -1,5 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import {
+  MatDialog,
+  MatDialogRef,
+  MAT_DIALOG_DATA,
+} from '@angular/material/dialog';
+
+import {ProductComponent} from 'src/app/components/lookup/product/product.component'
 
 @Component({
   selector: 'app-product-main',
@@ -11,8 +18,9 @@ export class ProductMainComponent implements OnInit {
   productTabIndex: number = 1 ;
 
   schemeCode: string;
+  schemeDescription: string;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,private dialog: MatDialog,) { }
 
   ngOnInit(): void {
   }
@@ -40,6 +48,18 @@ navigate(){
     this.router.navigate(['product-delete',this.schemeCode]);
   }
 
+}
+
+productLookup(): void {
+  const cdialogRef = this.dialog.open(ProductComponent, {
+    height: '400px',
+    width: '600px',
+  });
+  cdialogRef.afterClosed().subscribe((result) => {
+    console.log(result.data);
+    this.schemeCode = result.data.schemeCode;
+    this.schemeDescription=result.data.productDescription
+  });
 }
 
 }

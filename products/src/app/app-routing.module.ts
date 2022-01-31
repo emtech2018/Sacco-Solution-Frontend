@@ -19,6 +19,10 @@ import {InterestDeleteComponent} from 'src/app/components/main/interest/interest
 import {ProductResolverResolver} from 'src/app/resolvers/product-resolver.resolver'
 import {InterestResolverResolver} from 'src/app/resolvers/interest-resolver.resolver'
 
+//status messages
+import { SuccessComponent} from 'src/app/components/status/success/success.component'
+import {FailureComponent} from 'src/app/components/status/failure/failure.component'
+
 
 
 
@@ -35,6 +39,9 @@ const routes: Routes = [
   {path: 'interest-inquire/:id', component:InterestInquireComponent, resolve: {interest: InterestResolverResolver}},
   {path: 'interest-modify/:id', component:InterestModifyComponent, resolve: {interest: InterestResolverResolver}},
   {path: 'interest-delete/:id', component:InterestDeleteComponent, resolve: {interest: InterestResolverResolver}},
+
+  {path: 'success', component: SuccessComponent},
+  {path: 'failure', component: FailureComponent},
 
 ];
 

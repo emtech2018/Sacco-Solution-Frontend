@@ -3,6 +3,7 @@ import { Interest } from 'src/app/interfaces/interest';
 import { Slab } from 'src/app/interfaces/slab';
 
 import { InterestService } from 'src/app/services/interest.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-interest-add',
@@ -16,22 +17,21 @@ export class InterestAddComponent implements OnInit {
   currency!: string;
   startDate!: Date;
   endDate!: Date;
-  fullDiff: string="F";
+  fullDiff: string = 'F';
   dlength: number;
   clength: number;
 
-  cfrom!: number
-  cto!: number
-  crate!: number
-  cdrCr: string="C"
-  cfslab:Slab={}
+  cfrom!: number;
+  cto!: number;
+  crate!: number;
+  cdrCr: string = 'C';
+  cfslab: Slab = {};
 
-  dfrom!: number
-  dto!: number
-  drate!: number
-  ddrCr: string="D"
-  dfslab:Slab={}
-
+  dfrom!: number;
+  dto!: number;
+  drate!: number;
+  ddrCr: string = 'D';
+  dfslab: Slab = {};
 
   dslab: Slab = {};
   dslabs: Slab[] = [];
@@ -41,7 +41,10 @@ export class InterestAddComponent implements OnInit {
 
   // slabs: Slab[]=[]
 
-  constructor(    private interestservice: InterestService) {
+  constructor(
+    private router: Router,
+    private interestservice: InterestService
+  ) {
     this.interest = { amountSlabs: [] };
     this.cslab = { fromAmount: 0, drCr: 'C' };
     this.dslab = { fromAmount: 0, drCr: 'D' };
@@ -93,87 +96,88 @@ export class InterestAddComponent implements OnInit {
     this.clength = this.cslabs.length;
   }
 
-   submitInterest(){
-    this.interest.interestCode=this.interestCode
-    this.interest.currency=this.currency
-    this.interest.fullDiff=this.fullDiff
-    this.interest.startDate=this.startDate
-    this.interest.endDate=this.endDate
+  submitInterest() {
+    this.interest.interestCode = this.interestCode;
+    this.interest.currency = this.currency;
+    this.interest.fullDiff = this.fullDiff;
+    this.interest.startDate = this.startDate;
+    this.interest.endDate = this.endDate;
 
-    this.interest.postedBy="KAMAU"
-    this.interest.postedFlag= 'Y';
-    this.interest.postedTime= new Date()
-    this.interest.modifiedBy="KAMAU"
-    this.interest.modifiedTime=new Date()
-    this.interest.verifiedBy="KAMAU"
-    this.interest.verifiedTime=new Date()
-    this.interest.verifiedFlag= 'Y';
+    this.interest.postedBy = 'KAMAU';
+    this.interest.postedFlag = 'Y';
+    this.interest.postedTime = new Date();
+    this.interest.modifiedBy = 'KAMAU';
+    this.interest.modifiedTime = new Date();
+    this.interest.verifiedBy = 'KAMAU';
+    this.interest.verifiedTime = new Date();
+    this.interest.verifiedFlag = 'Y';
     this.interest.deletedFlag = 'N';
 
-    if(this.fullDiff=="F"){
-      this.cfslab.drCr=this.cdrCr
-      this.cfslab.rate=this.crate
-      this.cfslab.interestCode=this.interestCode
-      this.cfslab.postedBy="KAMAU"
-      this.cfslab.modifiedBy="KAMAU"
-      this.cfslab.postedTime=new Date()
-      this.cfslab.verifiedFlag="Y"
-      this.cfslab.postedFlag="Y"
-      this.cfslab.deletedFlag="N"
-      this.interest.amountSlabs.push(this.cfslab)
+    if (this.fullDiff == 'F') {
+      this.cfslab.drCr = this.cdrCr;
+      this.cfslab.rate = this.crate;
+      this.cfslab.interestCode = this.interestCode;
+      this.cfslab.postedBy = 'KAMAU';
+      this.cfslab.modifiedBy = 'KAMAU';
+      this.cfslab.postedTime = new Date();
+      this.cfslab.verifiedFlag = 'Y';
+      this.cfslab.postedFlag = 'Y';
+      this.cfslab.deletedFlag = 'N';
+      this.interest.amountSlabs.push(this.cfslab);
 
-      this.dfslab.drCr=this.ddrCr
-      this.dfslab.rate=this.drate
-      this.dfslab.interestCode=this.interestCode
-      this.dfslab.postedBy="KAMAU"
-      this.dfslab.modifiedBy="KAMAU"
-      this.dfslab.postedTime=new Date()
-      this.dfslab.verifiedFlag="Y"
-      this.dfslab.postedFlag="Y"
-      this.dfslab.deletedFlag="N"
-      this.interest.amountSlabs.push(this.dfslab)
-
+      this.dfslab.drCr = this.ddrCr;
+      this.dfslab.rate = this.drate;
+      this.dfslab.interestCode = this.interestCode;
+      this.dfslab.postedBy = 'KAMAU';
+      this.dfslab.modifiedBy = 'KAMAU';
+      this.dfslab.postedTime = new Date();
+      this.dfslab.verifiedFlag = 'Y';
+      this.dfslab.postedFlag = 'Y';
+      this.dfslab.deletedFlag = 'N';
+      this.interest.amountSlabs.push(this.dfslab);
     }
-    if(this.fullDiff=="D"){
+    if (this.fullDiff == 'D') {
       for (let sl of this.dslabs) {
-        sl.interestCode=this.interestCode;
-        sl.postedTime=new Date()
-        sl.postedBy="KAMAU"; 
-        sl.modifiedBy="KAMAU"; 
-         sl.verifiedFlag="N"
-         sl.postedFlag="Y"
-         sl.deletedFlag="N"
-   } 
+        sl.interestCode = this.interestCode;
+        sl.postedTime = new Date();
+        sl.postedBy = 'KAMAU';
+        sl.modifiedBy = 'KAMAU';
+        sl.verifiedFlag = 'N';
+        sl.postedFlag = 'Y';
+        sl.deletedFlag = 'N';
+      }
 
-       for (let Csl of this.cslabs) {
-        Csl.interestCode=this.interestCode;
-        Csl.postedTime=new Date()
-        Csl.modifiedBy="KAMAU"; 
-        Csl.postedBy="KAMAU"; 
-         Csl.verifiedFlag="N"
-         Csl.postedFlag="Y"
-         Csl.deletedFlag="N"
-   } 
+      for (let Csl of this.cslabs) {
+        Csl.interestCode = this.interestCode;
+        Csl.postedTime = new Date();
+        Csl.modifiedBy = 'KAMAU';
+        Csl.postedBy = 'KAMAU';
+        Csl.verifiedFlag = 'N';
+        Csl.postedFlag = 'Y';
+        Csl.deletedFlag = 'N';
+      }
 
-      this.interest.amountSlabs= this.dslabs.concat(this.cslabs)
+      this.interest.amountSlabs = this.dslabs.concat(this.cslabs);
     }
 
     this.interestservice.createInterest(this.interest).subscribe(
-
       (data) => {
-        console.log(data.message)
+        this.router.navigate(['success'], {
+          state: {
+            message: data.message,
+          },
+        });
       },
       (error) => {
-
-     console.log(error.error.message)
+        this.router.navigate(['failure'], {
+          state: {
+            message: error.error.message,
+          },
+        });
       }
     );
 
-    console.log(this.interest)
+    console.log(this.interest);
+  }
 
-   }
-
-  //  felisterTest(){
-  //   console.log(this.interestCode)
-  //  }
 }

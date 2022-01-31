@@ -35,6 +35,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatTabsModule} from '@angular/material/tabs';
 import { ProductComponent } from './components/lookup/product/product.component';
 import { AccountComponent } from './components/lookup/account/account.component';
+import { SuccessComponent } from './components/status/success/success.component';
+import { FailureComponent } from './components/status/failure/failure.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +55,8 @@ import { AccountComponent } from './components/lookup/account/account.component'
     ProductDeleteComponent,
     ProductComponent,
     AccountComponent,
+    SuccessComponent,
+    FailureComponent,
 
   ],
   imports: [

@@ -21,7 +21,7 @@ export class InterestService {
    }
 
   retrieveAllInterestDefinitions(): Observable<Response> {
-    return this.http.get<Response>(this.baseUrl+'/all/');
+    return this.http.get<Response>(this.baseUrl+'all/');
    }
 
   retriveInterestDefinition(id: string) { 

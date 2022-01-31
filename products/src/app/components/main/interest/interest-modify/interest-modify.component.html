@@ -1,1 +1,237 @@
-<p>interest-modify works!</p>
+<mat-card class="container-fluid">
+    <div>
+      <h3 class="text-center">Inquire An Interest</h3>
+    </div>
+  
+    <mat-divider></mat-divider>
+    <form class="form" (ngSubmit)="updateInterest()">
+      <div class="container-fluid mt-4">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group row">
+              <div class="col-md-5 col-sm-12 form-column">
+                <label class="form-label start pull-left"
+                  >Interest Code<span class="warning">*</span></label
+                >
+              </div>
+              <div class="col-md-6 col-8 form-column">
+                <input readonly name="interestCode" oninput ="this.value=this.value.toUpperCase()"
+                type="text" class="form-control" [(ngModel)]="interest.interestCode"/>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group row">
+              <div class="col-md-5 col-sm-12 form-column">
+                <label class="form-label start pull-left"
+                  >Currency<span class="warning">*</span></label
+                >
+              </div>
+              <div class="col-md-6 col-8 form-column">
+                <input readonly name="currency" oninput ="this.value=this.value.toUpperCase()"
+               type="text" class="form-control" [(ngModel)]="interest.currency"/>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group row">
+              <div class="col-md-5 col-sm-12 form-column">
+                <label class="form-label start pull-left"
+                  >Start Date<span class="warning">*</span></label
+                >
+              </div>
+              <div class="col-md-6 col-8 form-column">
+                <input readonly name="startDate" 
+                type="date" class="form-control" [(ngModel)]="interest.startDate"/>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group row">
+              <div class="col-md-5 col-sm-12 form-column">
+                <label class="form-label start pull-left"
+                  >End Date<span class="warning">*</span></label
+                >
+              </div>
+              <div class="col-md-6 col-8 form-column">
+                <input readonly name="endDate"
+                type="date" class="form-control" [(ngModel)]="interest.endDate"/>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group row">
+              <div class="col-md-5 col-sm-12 form-column">
+                <label class="form-label start pull-left"
+                  >Full/Differential<span class="warning">*</span></label
+                >
+              </div>
+              <div class="col-md-6 col-8 form-column">
+                <select name="fullDiff" disabled [(ngModel)]="interest.fullDiff"
+                >
+                  <option value="F" selected>FULL</option>
+                  <option value="D">DIFFERENTIAL</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <mat-divider></mat-divider>
+        <div>
+          <h4 class="text-center">Credit Amount Slabs</h4>
+  
+          <div>
+          <div *ngFor="let c of cSlabs; let i=index">
+          <div class="row">
+            <div class="col-md-3">
+              <div class="form-group row mt-1">
+                <label
+                  for="acname"
+                  class="col-md-5 col-form-label col-form-label-sm text-left"
+                  >From</label
+                >
+                <div class="col-md-7">
+                  <input readonly type="number" readonly class="form-control"  name="cfrom{{i}}" [(ngModel)]="c.fromAmount"
+                  />
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-md-3">
+              <div class="form-group row mt-1">
+                <label for="acname" class="col-md-5 col-form-label text-left"
+                  >To</label
+                >
+                <div class="col-md-7">
+                  <input readonly type="number" required class="form-control"  name="cto{{i}}"
+                  [(ngModel)]="c.toAmount"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group row mt-1">
+                <label for="acname" class="col-md-5 col-form-label text-left"
+                  >Rate</label
+                >
+                <div class="col-md-7">
+                  <input readonly
+                    type="number"
+                    step=".00000001"
+                    required
+                    class="form-control"
+                    name="crate{{i}}"
+                    [(ngModel)]="c.rate"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group row mt-1">
+                <label for="iacc" class="col-md-4 col-form-label text-left"
+                  >Dr/Cr</label
+                >
+                <div class="col-md-6">
+                  <select disabled  name="cdrCr{{i}}" [(ngModel)]="c.drCr"
+                  >
+                    <option value="C">CREDIT</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+        </div>
+        <mat-divider></mat-divider>
+        <div>
+          <h4 class="text-center">Debit Amount Slabs</h4>
+  
+          <div >
+         <div *ngFor="let d of dSlabs; let i=index">
+          <div class="row">
+            <div class="col-md-3">
+              <div class="form-group row mt-1">
+                <label
+                  for="acname"
+                  class="col-md-5 col-form-label col-form-label-sm text-left"
+                  >From</label
+                >
+                <div class="col-md-7">
+                  <input readonly type="number" readonly class="form-control"  name="dfrom{{i}}"
+                  [(ngModel)]="d.fromAmount"
+                 />
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-md-3">
+              <div class="form-group row mt-1">
+                <label for="acname" class="col-md-5 col-form-label text-left"
+                  >To</label
+                >
+                <div class="col-md-7">
+                  <input readonly type="number" required class="form-control"  name="dto{{i}}"
+                  [(ngModel)]="d.toAmount"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group row mt-1">
+                <label for="acname" class="col-md-5 col-form-label text-left"
+                  >Rate</label
+                >
+                <div class="col-md-7">
+                  <input readonly
+                    type="number"
+                    step=".00000001"
+                    required
+                    class="form-control"
+                    name="drate{{i}}"
+                    [(ngModel)]="d.rate"
+                    
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group row mt-1">
+                <label for="iacc" class="col-md-4 col-form-label text-left"
+                  >Dr/Cr</label
+                >
+                <div class="col-md-6">
+                  <select disabled  name="ddrCr{{i}}"
+                  [(ngModel)]="d.drCr"
+                  >
+                    <option value="D">DEBIT</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+          </div>
+        </div>
+
+        <div class="row container-fluid mt-4">   
+            <div class="col-md-1 offset-md-11 col-4">
+              <button
+                mat-raised-button
+                class="btn bg-success go mx-auto d-block text-light"
+                type="submit"
+              >
+                Submit
+              </button>
+            </div>
+          </div>
+      </div>
+    </form>
+  </mat-card>
+  
+  
