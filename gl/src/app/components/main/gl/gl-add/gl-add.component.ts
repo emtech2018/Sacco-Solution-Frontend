@@ -22,8 +22,8 @@ export class GlAddComponent implements OnInit {
   ngOnInit(): void {
   }
  submitGl(){
-   this.glCode = this.glCode
-   this.glDescription = this.glDescription
+   this.gl.glCode = this.glCode
+   this.gl.glDescription = this.glDescription
    
    this.gl.deleteFlag = "N"
    this.gl.deletedBy = "Kamau"
@@ -51,7 +51,7 @@ export class GlAddComponent implements OnInit {
      }
   
     ),
-    console.log(this.gl);
+    console.log("test",this.glCode);
     
 
  }

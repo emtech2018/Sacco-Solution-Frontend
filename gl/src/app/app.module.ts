@@ -10,11 +10,13 @@ import { GlAddComponent } from './components/main/gl/gl-add/gl-add.component';
 import { GlInquireComponent } from './components/main/gl/gl-inquire/gl-inquire.component';
 import { GlModifyComponent } from './components/main/gl/gl-modify/gl-modify.component';
 import { GlDeleteComponent } from './components/main/gl/gl-delete/gl-delete.component';
+
 import { GlSubheadsMainComponent } from './components/main/gl-subheads/gl-subheads-main/gl-subheads-main.component';
 import { GlSubheadsAddComponent } from './components/main/gl-subheads/gl-subheads-add/gl-subheads-add.component';
 import { GlSubheadsInquireComponent } from './components/main/gl-subheads/gl-subheads-inquire/gl-subheads-inquire.component';
 import { GlSubheadsModifyComponent } from './components/main/gl-subheads/gl-subheads-modify/gl-subheads-modify.component';
 import { GlSubheadsDeleteComponent } from './components/main/gl-subheads/gl-subheads-delete/gl-subheads-delete.component';
+
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardHeader, MatCardModule } from '@angular/material/card';

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Response } from 'src/app/interfaces/response';
 
 @Component({
   selector: 'app-gl-inquire',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./gl-inquire.component.css']
 })
 export class GlInquireComponent implements OnInit {
-
-  constructor() { }
+  gl:Response = this.route.snapshot.data['gl'];
+  glCode !: string;
+  glDescription !: string;
+  constructor( private route:ActivatedRoute) { }
 
   ngOnInit(): void {
+    console.log(this.gl);
+    
   }
+ 
 
 }

@@ -31,14 +31,14 @@ export class GlComponent implements OnInit {
       (data) =>{
         this.isLoadingResults = false;
         console.log(data)
-        this.dataSource = new MatTableDataSource(data.entity.t);
+        this.dataSource = new MatTableDataSource(data.entity);
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
         console.log(data);
       },
       (error) => {}
       
-    )
+    );
     
    }
 
@@ -56,7 +56,7 @@ export class GlComponent implements OnInit {
 
   }
   onSelect(data:any){
-    this.dialogRef.close({event: 'close', data: data})
+    this.dialogRef.close({event: 'close', data: data});
 
   }
 

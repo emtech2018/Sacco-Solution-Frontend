@@ -1,10 +1,9 @@
-import {Glsubheads} from 'src/app/interfaces/gl-subheads';
+
 export interface Gl{
    
     sn ?: 0,
     glCode ?: string,
     glDescription ?: string,
-    glsubheads ?: Glsubheads[],
 
     deleteFlag ?: string,
     deletedBy ?: string,

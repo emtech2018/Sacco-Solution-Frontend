@@ -1,6 +1,6 @@
 <mat-card class="container-fluid">
   <mat-card-header>
-    <div>Product Maintainance</div>
+    <div>General ledger</div>
   </mat-card-header>
   <mat-divider></mat-divider>
 
@@ -29,7 +29,7 @@
           <div class="form-group row">
             <div class="col-md-5 col-sm-12 form-column">
               <label class="start pull-left"
-                >MAINTENANCE LEVEL<span class="warning">*</span></label
+                >Maintenance Level<span class="warning">*</span></label
               >
             </div>
             <div class="col-md-6 col-8 form-column">
@@ -43,9 +43,9 @@
           </div>
         </div>
       </div>
-
-      <div class="row" >
-        <div class="col-md-5" *ngIf="glTabIndex!=1">
+      <br>
+      <div class="row" *ngIf="glTabCode == 1" >
+        <div class="col-md-5" *ngIf="glTabIndex !=1">
           <div class="form-group row">
             <div class="col-md-5 col-12 form-column">
               <label class="start pull-left"
@@ -67,8 +67,36 @@
             color="primary"
             class="btn bg-primary go mx-auto d-block text-light"
             type="button"
-            (click)="navigate()"
-          >
+            (click)="navigate()">
+            GO
+          </button>
+        </div>
+      </div>
+       <br>
+      <div class="row" *ngIf="glTabCode == 2" >
+        <div class="col-md-5" *ngIf="glTabIndex != 1">
+          <div class="form-group row">
+            <div class="col-md-5 col-12 form-column">
+              <label class="start pull-left"
+                >GLSubhead Code<span class="warning">*</span></label
+              >
+            </div>
+            <div class="col-md-6 col-7 form-column">
+              <input type="text" class="form-control" [(ngModel)]="glSubheadCode" name="glSubheadCode"/>
+            </div>
+            <div class="col-md-1 col-1">
+              <mat-icon (click)="subheadLookup()">search</mat-icon>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-2 offset-md-3 col-3 mt-2">
+          <button
+            mat-raised-button
+            color="primary"
+            class="btn bg-primary go mx-auto d-block text-light"
+            type="button"
+            (click)="navigate2()">
             GO
           </button>
         </div>

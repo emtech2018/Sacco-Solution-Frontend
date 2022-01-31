@@ -1,1 +1,61 @@
-<p>gl-delete works!</p>
+<mat-card class="cointainer-fluid">
+    <div><h3 class="text-center">Inquire a GL</h3></div>
+    <mat-divider></mat-divider>
+    <form action="" (ngSubmit)="deleteGl()">
+        <div class="form">
+            <div class="container-fluid mt-4">
+                <div class="row">
+                   <div class="form-group row">
+                    <div class="col-md-6">
+                        <div class="col-md-5 col-sm-12 form-column">
+                            <label for="" class="form-label start pull-left">GL Code<span class="warning">*</span></label>
+                        </div>
+                        <div class="col-md-5 col-8 form-column">
+                            <input readonly name="glCode" value="{{this.gl.entity.glCode}}" type="text" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="col-md-5 col-sm-12 form-column">
+                            <label for="" class="form-label start pull-left">Gl Description<span class="warning">*</span></label>
+    
+                        </div>
+                        <div class="col-md-6 col-8 form-column">
+                            <input  name="glDescription" value = "{{this.gl.entity.glDescription}}"
+                            type="text" class="form-control" />
+                          </div>
+                    </div>
+                   </div>
+                </div>
+                </div>
+                
+            <div class="row container-fluid mt-4">
+                <!-- <div class="col-md-1 offset-md-10 col-4">
+                  <button
+                    mat-raised-button
+                    color="primary"
+                    class="btn bg-primary go mx-aud-block text-light"
+                    type="reset"
+                  >
+                    Reset
+                  </button>
+                </div> -->
+        
+                <div class="col-md-12 col-12">
+                  <button
+                    mat-raised-button
+                    class="btn bg-success go mx-auto d-block text-light"
+                    type="submit"
+                  >
+                    Submit
+                  </button>
+                </div>
+              </div>
+            
+        </div>
+      
+          
+    </form>
+
+
+</mat-card>
+

@@ -15,13 +15,13 @@
     <!-- Position Column -->
      <ng-container matColumnDef="code">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Gl</th>
-      <td mat-cell *matCellDef="let gl"> {{gl.sn}} </td>
+      <td mat-cell *matCellDef="let gl"> {{gl.glCode}} </td>
     </ng-container>
   
     <!-- Name Column -->
      <ng-container matColumnDef="description">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Gl Code </th>
-      <td mat-cell *matCellDef="let gl"> {{gl.glCode}} </td>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Gl Description </th>
+      <td mat-cell *matCellDef="let gl"> {{gl.glDescription}} </td>
     </ng-container>
   
   

@@ -17,14 +17,14 @@ export class GlService {
     return this.http.post<Message>(this.baseUrl+ 'add/', gl)
   }
   updateGlDefinition(gl: Gl):Observable<Message>{
-    return this.http.put<Message>(this.baseUrl+ 'update/', gl)
+    return this.http.put<Message>(this.baseUrl+ 'update', gl)
   }
-
+ 
   retrieveAllGlDefinitions(): Observable<Response> {
     return this.http.get<Response>(this.baseUrl+'all/');
    }
 
-  retrieveAllDefinition(id:string){
+  retrieveGl(id:string){
     return this.http.get<Gl>(this.baseUrl+id)
   } 
 

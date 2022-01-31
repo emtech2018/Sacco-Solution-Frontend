@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { GlComponent } from 'src/app/components/lookup/gl/gl.component';
 import {MatDialog} from '@angular/material/dialog';
 import {Gl} from 'src/app/interfaces/gl';
+import { GlSubheadsComponent } from 'src/app/components/lookup/gl-subheads/gl-subheads.component';
 
 @Component({
   selector: 'app-gl-main',
@@ -15,6 +16,7 @@ export class GlMainComponent implements OnInit {
   glTabIndex: number = 1;
   glTabCode: number = 1;
   glCode !: string
+  glSubheadCode !: string
 
   constructor(private router:Router, private dialog:MatDialog) { }
 
@@ -41,6 +43,23 @@ navigate(){
   if (this.glTabIndex == 4 && this.glTabCode == 1) {
     this.router.navigate(['gl-delete', this.glCode]);
   }
+ 
+}
+
+navigate2(){
+  if(this.glTabIndex == 1 && this.glTabCode == 2){
+    this.router.navigate(['gl-subheads-add'])
+  }
+  if(this.glTabIndex == 2 && this.glTabCode == 2 ){
+    this.router.navigate(['gl-subheads-inquire', this.glSubheadCode])
+  }
+  if(this.glTabIndex == 3 && this.glTabCode == 2){
+    this.router.navigate(['gl-subheads-modify', this.glSubheadCode])
+  }
+  if(this.glTabIndex == 4 && this.glTabCode == 2){
+    this.router.navigate(['gl-subheads-delete', this.glSubheadCode])
+  }
+
 }
 
 glLookup(): void{
@@ -51,6 +70,18 @@ glLookup(): void{
   cdialogRef.afterClosed().subscribe((result) =>{
     console.log(result.data);
     this.glCode = result.data.glCode
+    
+  })
+
+}
+subheadLookup(){
+  const cdialogRef = this.dialog.open(GlSubheadsComponent,{
+    height : '600px',
+    width : '800px'
+  });
+  cdialogRef.afterClosed().subscribe((result) =>{
+    this.glSubheadCode = result.data.glSubheadCode
+    
     
   })
 
