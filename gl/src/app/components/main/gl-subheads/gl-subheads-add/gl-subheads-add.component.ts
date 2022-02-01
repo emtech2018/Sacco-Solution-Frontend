@@ -4,6 +4,7 @@ import { Glsubheads } from 'src/app/interfaces/gl-subheads'
 import { GlComponent } from 'src/app/components/lookup/gl/gl.component';
 import { GlSubheadsService } from 'src/app/services/gl-subheads.service';
 import { Gl } from 'src/app/interfaces/gl';
+import { Router } from '@angular/router';
 //import { GlSubheadsComponent } from 'src/app/components/main/gl-subheads';
 @Component({
   selector: 'app-gl-subheads-add',
@@ -18,7 +19,8 @@ export class GlSubheadsAddComponent implements OnInit {
   glSubheadDescription !: string;
 
 constructor(private glSubheadService:GlSubheadsService,
-  private dialogRef:MatDialog){
+  private dialogRef:MatDialog,
+  private router:Router){
   this.glSubhead = {}
 }
 
@@ -51,9 +53,23 @@ constructor(private glSubheadService:GlSubheadsService,
 
     this.glSubheadService.createGlSubheads(this.glSubhead).subscribe(
       (data) => {
+        this.router.navigate(['success'],{
+          state:{
+            message:data.message,
+          },
+        });
+        console.log(data.message);
+        
 
       },
       (error) =>{
+        this.router.navigate(['failure'],{
+          state:{
+            message:error.error.message,
+          },
+        });
+        console.log(error.error.message);
+        
 
       }
       ),

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Response } from 'src/app/interfaces/response';
 import { GlSubheadsService } from 'src/app/services/gl-subheads.service';
 
@@ -15,17 +15,28 @@ export class GlSubheadsModifyComponent implements OnInit {
   glSubheadCode !: string
   glSubheadDescription !: string
   constructor(private route:ActivatedRoute,
-    private SubheadService:GlSubheadsService) { }
+    private SubheadService:GlSubheadsService,
+    private router:Router) { }
 
   ngOnInit(): void {
   }
   submitSubGl(){
     this.SubheadService.updateGlSubheadsDefinition(this.subhead.entity).subscribe(
       (data) =>{
-        console.log("Complete");
+        this.router.navigate(['success'],{
+          state:{
+            message:data.message,
+          }
+        });
         
       },
-      (error) =>{}
+      (error) =>{
+        this.router.navigate(['failure'],{
+          state:{
+            message:error.error.message
+          }
+        })
+      }
       );
     
 

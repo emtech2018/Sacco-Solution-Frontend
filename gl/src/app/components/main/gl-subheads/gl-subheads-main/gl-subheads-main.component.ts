@@ -28,18 +28,5 @@ glLookup(){
 }
 navigate(){
 
-  if (this.glTabIndex == 1 && this.glTabCode == 2) {
-    this.router.navigate(['gl-subhead-add']);
-}
-if (this.glTabIndex == 2 && this.glTabCode == 2) {
-  this.router.navigate(['gl-subhead-inquire']);
-}
-if (this.glTabIndex == 2 && this.glTabCode == 2) {
-  this.router.navigate(['gl-subhead-modify']);
-}
-if (this.glTabIndex == 2 && this.glTabCode == 2) {
-  this.router.navigate(['gl-subhead-delete']);
-}
-
 }
 }

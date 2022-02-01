@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Response } from 'src/app/interfaces/response';
 import { GlSubheadsService } from 'src/app/services/gl-subheads.service';
 
@@ -15,7 +15,8 @@ export class GlSubheadsDeleteComponent implements OnInit {
   glSubheadDescription !: string
 
   constructor(private route:ActivatedRoute,
-    private SubheadService:GlSubheadsService) { }
+    private SubheadService:GlSubheadsService,
+    private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -27,8 +28,21 @@ export class GlSubheadsDeleteComponent implements OnInit {
     this.subhead.entity.deletedTime = new Date()
 
     this.SubheadService.updateGlSubheadsDefinition(this.subhead.entity).subscribe(
-      (data) =>{},
-      (error) =>{}
+      (data) =>{
+        this.router.navigate(['success'],{
+          state:{
+            message:data.message,
+          }
+        });
+        
+      },
+      (error) =>{
+        this.router.navigate(['failure'],{
+          state:{
+            message:error.error.message,
+          }
+        })
+      }
     ),
     console.log("Actioned Complete");
     

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Gl } from 'src/app/interfaces/gl';
 import { Response } from 'src/app/interfaces/response';
 import { GlService } from 'src/app/services/gl.service';
@@ -16,7 +16,8 @@ export class GlModifyComponent implements OnInit {
   glDescription !: string
   constructor( private route:ActivatedRoute, 
     private glService:GlService,
-    private dialogRef:MatDialog) {
+    private dialogRef:MatDialog,
+    private router:Router) {
    
     
    }
@@ -26,11 +27,26 @@ export class GlModifyComponent implements OnInit {
   submitGl(){
    this.glService.updateGlDefinition(this.gl.entity).subscribe(
      (data) =>{
+       this.router.navigate(['success'],{
+         state:{
+           message:data.message, 
+         },
+        
+       });
+       console.log(data.message);
+       
 
      },
-     (error) =>{}
+     (error) =>{
+       this.router.navigate(['failure'],{
+         state:{
+           message:error.error.message,
+         }
+       });
+     }
    ),
-   console.log("test",this.glCode)
+     console.log(this.glCode);
+     
   }
 
 }

@@ -11,7 +11,7 @@
                             <label for="" class="form-label start pull-left readonly"> Gl Code<span class="warning">*</span></label>
                         </div>
                         <div class="col-md-4 cols-sm-8 form-column">
-                            <input type="text" class="form-control" [(ngModel)]="glCode" name="glCode" />
+                            <input type="text" class="form-control" [(ngModel)]="glCode" name="glCode" required maxlength="3" />
                         </div>
                         <div class="col-md-1 col-1">
                             <mat-icon (click)="glSubheadLookup()">search</mat-icon>
@@ -23,7 +23,7 @@
                         </div>
                         <div class="col-md-5 col-sm-8 form-column">
                             <input name="glCode" oninput ="this.value=this.value.toUpperCase()"
-                                 [(ngModel)]="glSubheadCode" type="text" class="form-control" />
+                                 [(ngModel)]="glSubheadCode" type="text" class="form-control" required maxlength="6"/>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -32,7 +32,7 @@
     
                         </div>
                         <div class="col-md-6 col-8 form-column">
-                            <input name="glDescription" oninput ="this.value=this.value.toUpperCase()"
+                            <input name="glDescription" oninput ="this.value=this.value"
                             [(ngModel)]="glSubheadDescription" type="text" class="form-control" />
                           </div>
                     </div>

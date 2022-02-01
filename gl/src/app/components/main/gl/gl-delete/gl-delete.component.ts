@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import {Response} from 'src/app/interfaces/response'
 import { GlService } from 'src/app/services/gl.service';
 
@@ -13,7 +13,8 @@ export class GlDeleteComponent implements OnInit {
   glcode !:string;
   glDescription !: string;
 
-  constructor(private activeroute:ActivatedRoute, private glService:GlService) { }
+  constructor(private activeroute:ActivatedRoute, private glService:GlService,
+    private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -25,6 +26,21 @@ export class GlDeleteComponent implements OnInit {
     this.gl.entity.deletedBy = "Wanjiru";
 
     this.glService.updateGlDefinition(this.gl.entity).subscribe(
+      (data) =>{
+        this.router.navigate(['success'],
+        {
+          state:{
+            message:data.message
+          }
+        })
+      },
+      (error) =>{
+        this.router.navigate(['failure'],{
+          state:{
+            message:error.error.message
+          }
+        });
+      }
 
     ) 
   }

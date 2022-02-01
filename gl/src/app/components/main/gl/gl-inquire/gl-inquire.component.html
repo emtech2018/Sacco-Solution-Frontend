@@ -1,7 +1,7 @@
 <mat-card class="cointainer-fluid">
     <div><h3 class="text-center">Inquire a GL</h3></div>
     <mat-divider></mat-divider>
-    <form action="">
+    <form action="" (ngSubmit)="SubmitGl()">
         <div class="form">
             <div class="container-fluid mt-4">
                 <div class="row">
@@ -27,8 +27,8 @@
                 </div>
                 </div>
                 
-            <!-- <div class="row container-fluid mt-4">
-                <div class="col-md-1 offset-md-10 col-4">
+            <div class="row container-fluid mt-4">
+                <!-- <div class="col-md-1 offset-md-10 col-4">
                   <button
                     mat-raised-button
                     color="primary"
@@ -37,7 +37,7 @@
                   >
                     Reset
                   </button>
-                </div>
+                </div> -->
         
                 <div class="col-md-1 col-4">
                   <button
@@ -48,7 +48,7 @@
                     Submit
                   </button>
                 </div>
-              </div> -->
+              </div>
             
         </div>
       

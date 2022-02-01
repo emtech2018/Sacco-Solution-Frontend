@@ -12,7 +12,7 @@
                         </div>
                         <div class="col-md-5 col-8 form-column">
                             <input name="glCode" oninput ="this.value=this.value.toUpperCase()"
-                                 [(ngModel)]="glCode" type="text" class="form-control" />
+                                 [(ngModel)]="glCode" type="text" class="form-control " required maxlength="3"  [errorStateMa]/>
                         </div>
                     </div>
                     <div class="col-md-6">

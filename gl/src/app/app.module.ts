@@ -21,14 +21,18 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardHeader, MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
-import {MatIconModule} from '@angular/material/icon';
-import {MatDividerModule} from '@angular/material/divider';
-import {MatSelectModule} from '@angular/material/select';
+import { MatIconModule} from '@angular/material/icon';
+import { MatDividerModule} from '@angular/material/divider';
+import { MatSelectModule} from '@angular/material/select';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'
-import {MatTableModule} from '@angular/material/table';
+import { MatProgressSpinnerModule} from '@angular/material/progress-spinner'
+import { MatTableModule} from '@angular/material/table';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import {MatInputModule} from '@angular/material/input'
+import { MatInputModule} from '@angular/material/input';
+
+//status
+import { SuccessComponent } from './components/status/success/success.component';
+import { FailureComponent } from './components/status/failure/failure.component'
 
 @NgModule({
   declarations: [
@@ -44,7 +48,9 @@ import {MatInputModule} from '@angular/material/input'
     GlSubheadsAddComponent,
     GlSubheadsInquireComponent,
     GlSubheadsModifyComponent,
-    GlSubheadsDeleteComponent
+    GlSubheadsDeleteComponent,
+    SuccessComponent,
+    FailureComponent
   ],
   imports: [
     BrowserModule,

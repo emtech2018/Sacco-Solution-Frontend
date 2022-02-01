@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import {Gl} from 'src/app/interfaces/gl' ;
 import { GlComponent } from 'src/app/components/lookup/gl/gl.component';
 import { GlService } from 'src/app/services/gl.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-gl-add',
   templateUrl: './gl-add.component.html',
@@ -15,7 +16,8 @@ export class GlAddComponent implements OnInit {
   
 
   constructor( private glservice:GlService,
-    private dialogRef:MatDialog) {
+    private dialogRef:MatDialog,
+    private router:Router) {
      this.gl = {};
    }
 
@@ -42,11 +44,26 @@ export class GlAddComponent implements OnInit {
 
    this.glservice.createGl(this.gl).subscribe(
      (data) =>{
+       this.router.navigate(['success'],{
+         state:{
+           message:data.message,
+         }
+
+       });
        console.log(data.message);
+       
        
      }, 
      (error) =>{
+       this.router.navigate(['failure'],
+       {
+         state:{
+           message:error.error.message,
+         }
+       });
        console.log(error.error.message);
+       
+       
        
      }
   
