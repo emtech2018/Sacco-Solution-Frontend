@@ -1,71 +1,70 @@
-<mat-card class="cointainer-fluid">
-    <div><h3 class="text-center">Modify a GL Subhead</h3></div>
-    <mat-divider></mat-divider>
-    <form action="" (ngSubmit)="submitSubGl()">
-        <div class="form">
-            <div class="container-fluid mt-4">
-                <div class="row">
-                   <div class="form-group row">
-                    <div class="col-md-6">
-                        <div class="col-md-5 col-sm-12 form-column">
-                            <label for="" class="form-label start pull-left readonly"> Gl Code<span class="warning">*</span></label>
-                        </div>
-                        <div class="col-md-4 cols-sm-8 form-column">
-                            <input readonly name="glCode" value ="{{this.subhead.entity.glCode}}" type="text" class="form-control" />
-                        </div>
-                        <!-- <div class="col-md-1 col-1">
-                            <mat-icon (click)="glSubheadLookup()">search</mat-icon>
-                          </div> -->
-                    </div>
-                    <div class="col-md-6">
-                        <div class="col-md-5 col-sm-12 form-column">
-                            <label for="" class="form-label start pull-left"> GlSubhead Code<span class="warning">*</span></label>
-                        </div>
-                        <div class="col-md-5 col-sm-8 form-column">
-                            <input readonly name="glCode" value ="{{this.subhead.entity.glSubheadCode}}" type="text" class="form-control" /> 
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="col-md-5 col-sm-12 form-column">
-                            <label for="" class="form-label start pull-left">Gl Subheads Description<span class="warning">*</span></label>
-    
-                        </div>
-                        <div class="col-md-6 col-8 form-column">
-                            <input  name="glCode" value ="{{this.subhead.entity.glSubheadDescription}}" type="text" class="form-control" />
-                          </div>
-                    </div>
-                   </div>
-                </div>
-                </div>
-                
-            <div class="row container-fluid mt-4">
-                <!-- <div class="col-md-1 offset-md-10 col-4">
-                  <button
-                    mat-raised-button
-                    color="primary"
-                    class="btn bg-primary go mx-aud-block text-light"
-                    type="reset"
-                  >
-                    Reset
-                  </button>
-                </div> -->
-        
-                <div class="col-md-1 col-4">
-                  <button
-                    mat-raised-button
-                    class="btn bg-success go mx-auto d-block text-light"
-                    type="submit"
-                  >
-                    Submit
-                  </button>
-                </div>
+<mat-card class="container-fluid">
+  <mat-card-header>
+    <div><h3 class="text-center">Modify a Subhead</h3></div>
+  </mat-card-header>
+  <mat-divider></mat-divider>
+
+  <div class="container-fluid mt-4">
+    <form (ngSubmit)="submitSubGl()">
+      <div class="form">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group row">
+              <div class="col-md-5 col-sm-12 form-column">
+                <label class="form-label start pull-left">Gl Code<span class="warning">*</span></label>
               </div>
-            
+              <div class="col-md-6 col-8 form-column">
+                <input class="form-control" type="text"  name="glCode" value="{{this.subhead.entity.glCode}}" readonly>
+              </div>
+              <!-- <div class="col-md-1 col-2">
+                <mat-icon (click)="glSubheadLookup()">search</mat-icon>
+              </div> -->
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group row">
+              <div class="col-md-5 col-sm-12 form-column">
+                <label class="form-label start pull-left">Subhead Code<span class="warning">*</span></label>
+              </div>
+              <div class="col-md-6 col-8 form-column">
+                <input class="form-control" name="glSubheadCode" value="{{this.subhead.entity.glSubheadCode}}" type="text"  required maxlength="6" readonly>
+              </div>
+            </div>
+          </div>
         </div>
-      
-          
+        <br>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group row">
+              <div class="col-md-5 col-sm-12 form-column">
+                <label class="form-label start pull-left">Subhead Description<span class="warning">*</span></label>
+              </div>
+              <div class="col-md-6 col-8 form-column">
+                <input class="form-control" type="text" name="glSubheadDescription"  oninput="this.value=this.value.toUppperCase()"
+                [(ngModel)]="glSubheadDescription">
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="row container-fluid">
+          <div class="col-md-1 offset-md-10 col-4">
+            <!-- <button mat-raised-button color='warn' class="btn bg-warning go mx-auto d-block" type="reset">
+               
+            </button> -->
+          </div>
+          <div class="col-md-1 col-4">
+            <button mat-raised-button class="btn bg-success go mx-auto d-block text-light" type="submit">
+              Submit
+            </button>
+  
+          </div>
+  
+        </div>
+      </div>
+  
     </form>
 
+  </div>
 
 </mat-card>
-

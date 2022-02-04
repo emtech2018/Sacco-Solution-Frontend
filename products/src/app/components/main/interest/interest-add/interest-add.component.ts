@@ -172,8 +172,4 @@ export class InterestAddComponent implements OnInit {
     console.log(this.interest)
 
    }
-
-  //  felisterTest(){
-  //   console.log(this.interestCode)
-  //  }
 }

@@ -13,7 +13,10 @@ export class GlModifyComponent implements OnInit {
   // gl : Response = this.route.snapshot.data['gl'];
   gl :Response = this.route.snapshot.data['gl'];
   glCode !: string;
-  glDescription !: string
+  glDescription !: string;
+  allgls : Gl[] =[]
+  
+
   constructor( private route:ActivatedRoute, 
     private glService:GlService,
     private dialogRef:MatDialog,
@@ -23,8 +26,23 @@ export class GlModifyComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.glService.retrieveAllGlDefinitions().subscribe(
+      (data) =>{
+        this.allgls = data.entity
+
+      },
+      (error) =>{}
+    )
+    
   }
+
+
+
   submitGl(){
+
+
+
+
    this.glService.updateGlDefinition(this.gl.entity).subscribe(
      (data) =>{
        this.router.navigate(['success'],{
@@ -34,6 +52,7 @@ export class GlModifyComponent implements OnInit {
         
        });
        console.log(data.message);
+
        
 
      },

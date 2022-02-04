@@ -45,7 +45,7 @@
       </div>
       <br>
       <div class="row" *ngIf="glTabCode == 1" >
-        <div class="col-md-5" *ngIf="glTabIndex !=1">
+        <div class="col-md-5" *ngIf="glTabIndex">
           <div class="form-group row">
             <div class="col-md-5 col-12 form-column">
               <label class="start pull-left"
@@ -53,7 +53,7 @@
               >
             </div>
             <div class="col-md-6 col-7 form-column">
-              <input type="text" class="form-control" [(ngModel)]="glCode" name="glCode"/>
+              <input type="text" [(ngModel)]="glCode" name="glCode"/>
             </div>
             <div class="col-md-1 col-1">
               <mat-icon (click)="glLookup()">search</mat-icon>
@@ -64,8 +64,8 @@
         <div class="col-md-2 offset-md-3 col-3 mt-2">
           <button
             mat-raised-button
-            color="primary"
-            class="btn bg-primary go mx-auto d-block text-light"
+            color="warn"
+            class="btn go mx-auto d-block bg-primary text-light "
             type="button"
             (click)="navigate()">
             GO
@@ -74,7 +74,7 @@
       </div>
        <br>
       <div class="row" *ngIf="glTabCode == 2" >
-        <div class="col-md-5" *ngIf="glTabIndex != 1">
+        <div class="col-md-5" *ngIf="glTabIndex">
           <div class="form-group row">
             <div class="col-md-5 col-12 form-column">
               <label class="start pull-left"
@@ -82,7 +82,7 @@
               >
             </div>
             <div class="col-md-6 col-7 form-column">
-              <input type="text" class="form-control" [(ngModel)]="glSubheadCode" name="glSubheadCode"/>
+              <input type="text" [(ngModel)]="glSubheadCode" name="glSubheadCode"/>
             </div>
             <div class="col-md-1 col-1">
               <mat-icon (click)="subheadLookup()">search</mat-icon>
@@ -94,7 +94,7 @@
           <button
             mat-raised-button
             color="primary"
-            class="btn bg-primary go mx-auto d-block text-light"
+            class="btn bg-primary  go mx-auto d-block text-light "
             type="button"
             (click)="navigate2()">
             GO

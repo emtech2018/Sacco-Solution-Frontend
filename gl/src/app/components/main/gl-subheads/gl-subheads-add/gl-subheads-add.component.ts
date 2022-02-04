@@ -17,6 +17,9 @@ export class GlSubheadsAddComponent implements OnInit {
   glCode !: string;
   glSubheadCode !: string;
   glSubheadDescription !: string;
+  allSubheadCodes : Glsubheads[] = [];
+  show :boolean;
+  available: boolean = false;
 
 constructor(private glSubheadService:GlSubheadsService,
   private dialogRef:MatDialog,
@@ -25,6 +28,12 @@ constructor(private glSubheadService:GlSubheadsService,
 }
 
   ngOnInit(): void {
+    this.glSubheadService.retrieveAllGlSubheadDefinitions().subscribe(
+      (data)=>{
+         this.allSubheadCodes = data.entity
+      },
+      (error)=>{}
+    )
   }
 
  
@@ -51,31 +60,52 @@ constructor(private glSubheadService:GlSubheadsService,
     this.glSubhead.deletedTime = new Date()
 
 
-    this.glSubheadService.createGlSubheads(this.glSubhead).subscribe(
-      (data) => {
-        this.router.navigate(['success'],{
-          state:{
-            message:data.message,
-          },
-        });
-        console.log(data.message);
-        
 
-      },
-      (error) =>{
-        this.router.navigate(['failure'],{
-          state:{
-            message:error.error.message,
-          },
-        });
-        console.log(error.error.message);
-        
 
+    for(let gls of this.allSubheadCodes){
+      if(this.glSubhead.glSubheadCode == gls.glSubheadCode){
+        this.available = true;
+        break
+      }else{
+        this.available = false
       }
-      ),
-     console.log("testing", this.glSubhead);
-     
-  }
+    }
+
+    if(this.available == false){
+      this.glSubheadService.createGlSubheads(this.glSubhead).subscribe(
+        (data) => {
+          this.router.navigate(['success'],{
+            state:{
+              message:data.message,
+            },
+          });
+          console.log(data.message);
+          
+  
+        },
+        (error) =>{
+          this.router.navigate(['failure'],{
+            state:{
+              message:error.error.message,
+            },
+          });
+          console.log(error.error.message);
+          
+  
+        }
+        ),
+       console.log("testing", this.glSubhead);
+       
+    }
+    else{
+      this.show=true;
+      this.available= false;
+    }
+
+    }
+
+
+    
 
   glSubheadLookup(): void{
     const dialogRef = this.dialogRef.open(GlComponent,{

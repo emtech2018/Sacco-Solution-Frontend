@@ -76,8 +76,8 @@ glLookup(): void{
 }
 subheadLookup(){
   const cdialogRef = this.dialog.open(GlSubheadsComponent,{
-    height : '600px',
-    width : '800px'
+    height : '400px',
+    width : '600px'
   });
   cdialogRef.afterClosed().subscribe((result) =>{
     this.glSubheadCode = result.data.glSubheadCode

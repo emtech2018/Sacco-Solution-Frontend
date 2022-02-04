@@ -1,84 +1,64 @@
 <mat-card class="cointainer-fluid">
-    <div><h3 class="text-center">Delete a GL</h3></div>
-    <mat-divider></mat-divider>
-    <form action="" (ngSubmit)="deleteGl()">
-        <div class="form">
-            <div class="container-fluid mt-4">
-                <div class="row">
-                   <div class="form-group row">
-                    <div class="col-md-6">
-                        <div class="col-md-5 col-sm-12 form-column">
-                            <label for="" class="form-label start pull-left">GL Code<span class="warning">*</span></label>
-                        </div>
-                        <div class="col-md-5 col-8 form-column">
-                            <input readonly name="glCode" value="{{this.gl.entity.glCode}}" type="text" class="form-control" />
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="col-md-5 col-sm-12 form-column">
-                            <label for="" class="form-label start pull-left">Gl Description<span class="warning">*</span></label>
-    
-                        </div>
-                        <div class="col-md-6 col-8 form-column">
-                            <input  name="glDescription" value = "{{this.gl.entity.glDescription}}"
-                            type="text" class="form-control" />
-                          </div>
-                    </div>
-                   </div>
-                </div>
-                </div>
-                
-            <div class="row container-fluid mt-4">
-                <!-- <div class="col-md-1 offset-md-10 col-4">
-                  <button
-                    mat-raised-button
-                    color="primary"
-                    class="btn bg-primary go mx-aud-block text-light"
-                    type="reset"
-                  >
-                    Reset
-                  </button>
-                </div> -->
-        
-                <div class="col-md-12 col-12">
-                  <!-- <button
-                    mat-raised-button
-                    class="btn bg-danger go mx-auto d-block text-light"
-                    type="submit"
-                    data-bs-toggle = 'modal'
-                  >
-                    Delete
-                  </button> -->
-                  <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                      Delete
-                       </button>
+  <div><h3 class="text-center">Delete a GL</h3></div>
+  <mat-divider></mat-divider>
+  
+  <form action="" (ngSubmit)="deleteGl()">
+    <div class="container-fluid mt-4">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group row">
+            <div class="col-md-5 col-sm-12 form-column ">
+              <label class="form-label start pull-left">Gl Code<span class="warning">*</span></label>
+            </div>
+            <div class="col-md-6 col-8 form-column ">
+              <input name="schemeCode" value="{{this.gl.entity.glCode}}" type="text"  readonly class="form-control" />
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group row">
+            <div class="col-md-5 col-sm-12 form-column ">
+              <label class="form-label start pull-left">Gl Description<span class="warning">*</span></label>
+            </div>
+            <div class="col-md-6 col-8 form-column ">
+              <input type="text" name="glDescription"  value="{{this.gl.entity.glDescription}}" class="form-control"/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row container-fluid mt-4">
+      <div class="col-md-1 offset-md-10 col-4">
+    <!-- <button mat-raised-button color="warn" class="btn go mx-auto d-block bg-warning" type="reset">Reset</button> -->
+      </div>
 
-                    <!-- Modal -->
-                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                          <div class="modal-dialog">
-                            <div class="modal-content">
-                              <div class="modal-header">
-                                <h5 class="modal-title" id="staticBackdropLabel">Confirm</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                              </div>
-                              <div class="modal-body">
-                                <p>Do you wish to delete the data ?</p>
-                              </div>
-                              <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                                <button type="submit" class="btn btn-primary">Yes</button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                 
-                </div>
-              </div>
-            
-        </div>      
-    </form>
+      <div class="col-md-1 col-4">
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    Delete
+     </button>
+
+  <!-- Modal -->
+      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel">Confirm</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Do you wish to delete the data ?</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+              <button type="submit" class="btn btn-primary">Yes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>   
+  </form>
 
 
 </mat-card>
-

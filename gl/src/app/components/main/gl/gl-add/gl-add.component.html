@@ -1,60 +1,47 @@
 <mat-card class="cointainer-fluid">
     <div><h3 class="text-center">Add a GL</h3></div>
     <mat-divider></mat-divider>
-    <form action="" (ngSubmit)="submitGl()">
-        <div class="form">
-            <div class="container-fluid mt-4">
-                <div class="row">
-                   <div class="form-group row">
-                    <div class="col-md-6">
-                        <div class="col-md-5 col-sm-12 form-column">
-                            <label for="" class="form-label start pull-left">GL Code<span class="warning">*</span></label>
-                        </div>
-                        <div class="col-md-5 col-8 form-column">
-                            <input name="glCode" oninput ="this.value=this.value.toUpperCase()"
-                                 [(ngModel)]="glCode" type="text" class="form-control " required maxlength="3"  [errorStateMa]/>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="col-md-5 col-sm-12 form-column">
-                            <label for="" class="form-label start pull-left">Gl Description<span class="warning">*</span></label>
     
-                        </div>
-                        <div class="col-md-6 col-8 form-column">
-                            <input name="glDescription" oninput ="this.value=this.value"
-                            [(ngModel)]="glDescription" type="text" class="form-control" />
-                          </div>
-                    </div>
-                   </div>
-                </div>
-                </div>
-                
-            <div class="row container-fluid mt-4">
-                <div class="col-md-1 offset-md-10 col-4">
-                  <button
-                    mat-raised-button
-                    color="primary"
-                    class="btn bg-primary go mx-aud-block text-light"
-                    type="reset"
-                  >
-                    Reset
-                  </button>
-                </div>
-        
-                <div class="col-md-1 col-4">
-                  <button
-                    mat-raised-button
-                    class="btn bg-success go mx-auto d-block text-light"
-                    type="submit"
-                  >
-                    Submit
-                  </button>
-                </div>
+    <form action="" (ngSubmit)="submitGl()" #f='ngForm' novalidate>
+      <div class="container-fluid mt-4">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group row">
+              <div class="col-md-5 col-sm-12 form-column ">
+                <label class="form-label start pull-left">Gl Code<span class="warning">*</span></label>
               </div>
-            
+              <div class="col-md-6 col-8 form-column ">
+                <input name="glCode" oninput ="this.value=this.value.toUpperCase()"
+                [(ngModel)]="glCode" type="text" class="form-control" required maxlength="3"/>
+                <br>
+                <span *ngIf="this.show==true" style="color: red; font: size 6px;;">*GL Code already exists!!</span>  
+                <!-- <label for="" *ngIf="this.show==true">Gl Codes already exists</label> -->
+        
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group row">
+              <div class="col-md-5 col-sm-12 form-column ">
+                <label class="form-label start pull-left">Gl Description<span class="warning">*</span></label>
+              </div>
+              <div class="col-md-6 col-8 form-column ">
+                <input type="text" name="productDescription" oninput ="this.value=this.value"
+                [(ngModel)]="glDescription" class="form-control"/>
+              </div>
+            </div>
+          </div>
         </div>
-      
-          
+      </div>
+      <div class="row container-fluid mt-4">
+        <div class="col-md-1 offset-md-10 col-4">
+      <button mat-raised-button color="warn" class="btn go mx-auto d-block bg-warning" type="reset">Reset</button>
+        </div>
+  
+        <div class="col-md-1 col-4">
+      <button mat-raised-button class="btn bg-success go mx-auto d-block text-light" type="submit">Submit</button>
+        </div>
+      </div>   
     </form>
 
 
