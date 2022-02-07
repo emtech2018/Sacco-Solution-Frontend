@@ -40,7 +40,7 @@
           <div class="col-md-6">
             <div class="form-group row">
               <div class="col-md-5 col-sm-12 form-column">
-                <label class="form-label start pull-left">Subhead Description<span class="warning">*</span></label>
+                <label class="form-label start pull-left" required>Subhead Description<span class="warning">*</span></label>
               </div>
               <div class="col-md-6 col-8 form-column">
                 <input type="text" name="glSubheadDescription" oninput="this.value=this.value" [(ngModel)] ="glSubheadDescription">
@@ -51,16 +51,17 @@
   
         <div class="row container-fluid">
           <div class="col-md-1 offset-md-10 col-4">
-            <button mat-raised-button color='warn' class="btn bg-warning go mx-auto d-block" type="reset">
+            <button mat-raised-button color='warn' class="btn bg-warning go mx-auto d-block" type="reset" style="width: 76.43px;">
                Reset
             </button>
           </div>
           <div class="col-md-1 col-4">
-            <button mat-raised-button class="btn bg-success go mx-auto d-block text-light" type="submit">
+            <button mat-raised-button class="btn bg-success go mx-auto d-block text-light" type="submit" style="width: fit-content;">
               Submit
             </button>
   
           </div>
+           
   
         </div>
       </div>

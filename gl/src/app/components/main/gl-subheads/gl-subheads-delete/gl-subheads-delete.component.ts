@@ -33,7 +33,9 @@ export class GlSubheadsDeleteComponent implements OnInit {
           state:{
             message:data.message,
           }
+          
         });
+        console.log("Deleted");
         
       },
       (error) =>{
