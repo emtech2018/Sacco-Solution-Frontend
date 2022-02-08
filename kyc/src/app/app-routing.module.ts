@@ -13,17 +13,28 @@ import{CorporateInquireComponent} from 'src/app/components/main/corporate-kyc/co
 import{CorporateModifyComponent} from 'src/app/components/main/corporate-kyc/corporate-modify/corporate-modify.component'
 import{CorporateDeleteComponent} from 'src/app/components/main/corporate-kyc/corporate-delete/corporate-delete.component'
 
+import {CorporateResolver} from 'src/app/resolvers/corporate.resolver'
+import {RetailResolver} from 'src/app/resolvers/retail.resolver'
+
+//status messages
+import { SuccessComponent} from 'src/app/components/status/success/success.component'
+import {FailureComponent} from 'src/app/components/status/failure/failure.component'
+
 const routes: Routes = [
   {path: 'kyc', component: MainKycComponent},
 
   {path: 'retail-add', component: RetailAddComponent},
-  {path: 'retail-inquire', component: RetailInquireComponent},
-  {path: 'retail-modify', component: RetailModifyComponent},
-  {path: 'retail-delete', component: RetailDeleteComponent},
+  {path: 'retail-inquire/:id', component: RetailInquireComponent, resolve: {customer: RetailResolver}},
+  {path: 'retail-modify/:id', component: RetailModifyComponent, resolve: {customer: RetailResolver}},
+  {path: 'retail-delete/:id', component: RetailDeleteComponent, resolve: {customer: RetailResolver}},
   {path: 'corporate-add', component: CorporateAddComponent},
-  {path: 'corporate-inquire', component: CorporateInquireComponent},
-  {path: 'corporate-modify', component: CorporateModifyComponent},
-  {path: 'corporate-delete', component: CorporateDeleteComponent},
+  {path: 'corporate-inquire/:id', component: CorporateInquireComponent, resolve: {customer: CorporateResolver}},
+  {path: 'corporate-modify/:id', component: CorporateModifyComponent, resolve: {customer: CorporateResolver}},
+  {path: 'corporate-delete/:id', component: CorporateDeleteComponent, resolve: {customer: CorporateResolver}},
+
+  
+  {path: 'success', component: SuccessComponent},
+  {path: 'failure', component: FailureComponent},
 
 ];
 

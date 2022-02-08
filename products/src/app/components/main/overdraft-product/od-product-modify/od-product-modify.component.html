@@ -1,0 +1,251 @@
+<mat-card class="container-fluid">
+    <div>
+        <h3  class="text-center">Modify An Over-Draft Product</h3>
+    </div>
+    
+    <mat-divider></mat-divider>
+    <form class="form">
+      <mat-tab-group>
+        <mat-tab label="Product Details">
+          <div class="container-fluid mt-4">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group row">
+                  <div class="col-md-5 col-sm-12 form-column">
+                    <label class="form-label start pull-left"
+                      >Scheme Code<span class="warning">*</span></label
+                    >
+                  </div>
+                  <div class="col-md-6 col-8 form-column">
+                    <input
+                      name="schemeCode"
+                      oninput="this.value=this.value.toUpperCase()"
+                      type="text" [(ngModel)]="odproduct.schemeCode" maxlength="6"
+                      class="form-control"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group row">
+                  <div class="col-md-5 col-sm-12 form-column">
+                    <label class="form-label start pull-left"
+                      >Product Description<span class="warning">*</span></label
+                    >
+                  </div>
+                  <div class="col-md-6 col-8 form-column">
+                    <input
+                      type="text"
+                      name="productDescription" [(ngModel)]="odproduct.productDescription"
+                      oninput="this.value=this.value.toUpperCase()"
+                      class="form-control"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group row">
+                  <div class="col-md-5 col-sm-12 form-column">
+                    <label class="form-label start pull-left"
+                      >Branch Code<span class="warning">*</span></label
+                    >
+                  </div>
+                  <div class="col-md-6 col-8 form-column">
+                    <input
+                      readonly
+                      name="solCode"
+                      type="text" [(ngModel)]="odproduct.solCode"
+                      class="form-control"
+                    />
+                  </div>
+                  <div class="col-md-1 col-2">
+                    <mat-icon (click)="branchLookup()">search</mat-icon>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group row">
+                  <div class="col-md-5 col-sm-12 form-column">
+                    <label class="form-label start pull-left"
+                      >Interest Code<span class="warning">*</span></label
+                    >
+                  </div>
+                  <div class="col-md-6 col-8 form-column">
+                    <input
+                      readonly
+                      name="interestCode"
+                      type="text" [(ngModel)]="odproduct.interestCode"
+                      class="form-control"
+                    />
+                  </div>
+                  <div class="col-md-1 col-2">
+                    <mat-icon (click)="interestLookup()">search</mat-icon>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group row">
+                  <div class="col-md-5 col-sm-12 form-column">
+                    <label class="form-label start pull-left"
+                      >Inactive After(Days)<span class="warning">*</span></label
+                    >
+                  </div>
+                  <div class="col-md-6 col-8 form-column">
+                    <input
+                      name="toInactiveDuration"
+                      type="number" [(ngModel)]="odproduct.toInactiveDuration"
+                      class="form-control"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group row">
+                  <div class="col-md-5 col-sm-12 form-column">
+                    <label class="form-label start pull-left"
+                      >Dormant After(Days)<span class="warning">*</span></label
+                    >
+                  </div>
+                  <div class="col-md-6 col-8 form-column">
+                    <input name="inactiveToDormantDuration" [(ngModel)]="odproduct.inactiveToDormantDuration" type="number" class="form-control" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group row">
+                  <div class="col-md-5 col-sm-12 form-column">
+                    <label class="form-label start pull-left"
+                      >Sanction Limit<span class="warning">*</span></label
+                    >
+                  </div>
+                  <div class="col-md-6 col-8 form-column">
+                    <input name="maxSanctionLimit" type="number" [(ngModel)]="odproduct.maxSanctionLimit" class="form-control" />
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group row">
+                  <div class="col-md-5 col-sm-12 form-column">
+                    <label class="form-label start pull-left"
+                      >Max DR Balance <span class="warning">*</span></label
+                    >
+                  </div>
+                  <div class="col-md-6 col-8 form-column">
+                    <input name="drBalanceLimit" type="number" [(ngModel)]="odproduct.drBalanceLimit" class="form-control" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group row">
+                  <div class="col-md-5 col-sm-12 form-column">
+                    <label class="form-label start pull-left"
+                      >Max Penal Interest<span class="warning">*</span></label
+                    >
+                  </div>
+                  <div class="col-md-6 col-8 form-column">
+                    <input name="maxPenalInterest" type="number" [(ngModel)]="odproduct.maxPenalInterest" class="form-control" />
+                  </div>
+                </div>
+              </div>
+  
+            </div>
+          </div>
+        </mat-tab>
+        <mat-tab label="Charges">
+          <div class="container-fluid mt-4 mb-2">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group row">
+                  <div class="col-md-5 col-sm-12 form-column">
+                    <label class="form-label start pull-left"
+                      >Dormant Fee<span class="warning">*</span></label
+                    >
+                  </div>
+                  <div class="col-md-6 col-8 form-column">
+                    <input
+                      name="dormantFee"
+                      type="number" [(ngModel)]="odproduct.dormantFee"
+                      
+                      class="form-control"
+                    />
+                  </div>
+  
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group row">
+                  <div class="col-md-5 col-sm-12 form-column">
+                    <label class="form-label start pull-left"
+                      >Ledger Fee<span class="warning">*</span></label
+                    >
+                  </div>
+                  <div class="col-md-6 col-8 form-column">
+                    <input
+                      name="ledgerFee"
+                      type="number" [(ngModel)]="odproduct.ledgerFee"
+                    
+                      class="form-control"
+                    />
+                  </div>
+  
+                </div>
+              </div>
+            </div>
+  
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group row">
+                  <div class="col-md-5 col-sm-12 form-column">
+                    <label class="form-label start pull-left"
+                      >Inactive Fee<span class="warning">*</span></label
+                    >
+                  </div>
+                  <div class="col-md-6 col-8 form-column">
+                    <input
+                      type="number"
+                       [(ngModel)]="odproduct.inactiveFee"
+                      name="inactiveFee"
+                      class="form-control"
+                    />
+                  </div>
+  
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-tab>
+        <mat-tab label="Submission">
+          <div class="row container-fluid mt-4">
+            <div class="col-md-1 offset-md-10 col-4">
+              <button
+                mat-raised-button
+                color="warn"
+                class="btn go mx-auto d-block"
+                type="reset"
+              >
+                Reset
+              </button>
+            </div>
+  
+            <div class="col-md-1 col-4">
+              <button
+                mat-raised-button
+                class="btn bg-success go mx-auto d-block text-light"
+                type="submit"
+              >
+                Submit
+              </button>
+            </div>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </form>
+</mat-card>

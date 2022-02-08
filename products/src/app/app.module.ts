@@ -37,6 +37,21 @@ import { ProductComponent } from './components/lookup/product/product.component'
 import { AccountComponent } from './components/lookup/account/account.component';
 import { SuccessComponent } from './components/status/success/success.component';
 import { FailureComponent } from './components/status/failure/failure.component';
+import { OdProductAddComponent } from './components/main/overdraft-product/od-product-add/od-product-add.component';
+import { OdProductInquireComponent } from './components/main/overdraft-product/od-product-inquire/od-product-inquire.component';
+import { OdProductModifyComponent } from './components/main/overdraft-product/od-product-modify/od-product-modify.component';
+import { OdProductDeleteComponent } from './components/main/overdraft-product/od-product-delete/od-product-delete.component';
+import { SbProductAddComponent } from './components/main/savings-product/sb-product-add/sb-product-add.component';
+import { SbProductInquireComponent } from './components/main/savings-product/sb-product-inquire/sb-product-inquire.component';
+import { SbProductModifyComponent } from './components/main/savings-product/sb-product-modify/sb-product-modify.component';
+import { SbProductDeleteComponent } from './components/main/savings-product/sb-product-delete/sb-product-delete.component';
+import { TdProductAddComponent } from './components/main/td-product/td-product-add/td-product-add.component';
+import { TdProductInquireComponent } from './components/main/td-product/td-product-inquire/td-product-inquire.component';
+import { TdProductModifyComponent } from './components/main/td-product/td-product-modify/td-product-modify.component';
+import { TdProductDeleteComponent } from './components/main/td-product/td-product-delete/td-product-delete.component';
+import { TdProductComponent } from './components/lookup/td-product/td-product.component';
+import { SbProductComponent } from './components/lookup/sb-product/sb-product.component';
+import { OdProductComponent } from './components/lookup/od-product/od-product.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +72,21 @@ import { FailureComponent } from './components/status/failure/failure.component'
     AccountComponent,
     SuccessComponent,
     FailureComponent,
+    OdProductAddComponent,
+    OdProductInquireComponent,
+    OdProductModifyComponent,
+    OdProductDeleteComponent,
+    SbProductAddComponent,
+    SbProductInquireComponent,
+    SbProductModifyComponent,
+    SbProductDeleteComponent,
+    TdProductAddComponent,
+    TdProductInquireComponent,
+    TdProductModifyComponent,
+    TdProductDeleteComponent,
+    TdProductComponent,
+    SbProductComponent,
+    OdProductComponent,
 
   ],
   imports: [

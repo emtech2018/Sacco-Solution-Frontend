@@ -38,13 +38,25 @@
                 <option value=1>LOANS</option>
                 <option value=2>SAVINGS</option>
                 <option value=3>OVERDRAFT</option>
+                <option value=4>TERM DEPOSIT</option>
               </select>
             </div>
           </div>
         </div>
+        <div class="col-md-2 col-3" *ngIf="productTabIndex==1">
+          <button
+            mat-raised-button
+            color="primary"
+            class="btn go mx-auto d-block"
+            type="button"
+            (click)="navigate()"
+          >
+            GO
+          </button>
+        </div>
       </div>
 
-      <div class="row mt-2">
+      <div class="row mt-2" *ngIf="productTabIndex!=1">
         <div class="col-md-5">
           <div class="form-group row">
             <div class="col-md-5 col-12 form-column">
@@ -55,8 +67,17 @@
             <div class="col-md-6 col-7 form-column">
               <input type="text" class="form-control" [(ngModel)]="schemeCode" name="schemeCode"/>
             </div>
-            <div class="col-md-1 col-1">
+            <div class="col-md-1 col-1" *ngIf="productTypeTabIndex==1">
               <mat-icon (click)="productLookup()">search</mat-icon>
+            </div>
+            <div class="col-md-1 col-1" *ngIf="productTypeTabIndex==2">
+              <mat-icon (click)="sbproductLookup()">search</mat-icon>
+            </div>
+            <div class="col-md-1 col-1" *ngIf="productTypeTabIndex==3">
+              <mat-icon (click)="odproductLookup()">search</mat-icon>
+            </div>
+            <div class="col-md-1 col-1" *ngIf="productTypeTabIndex==4">
+              <mat-icon (click)="tdproductLookup()">search</mat-icon>
             </div>
           </div>
         </div>
@@ -72,12 +93,6 @@
             GO
           </button>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6 offset-md-2 ">
-          <label class="lbl">{{schemeDescription}}</label>
-        </div>
-        
       </div>
 
       <br />

@@ -28,5 +28,5 @@ export interface Product {
   minimumAmount?: number;
   minimumLoanPeriod?: number;
   multipleFactor?: number;
-  gracePeriodBase?: 'string';
+  gracePeriodBase?: string;
 }

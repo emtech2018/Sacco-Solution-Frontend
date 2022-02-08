@@ -29,26 +29,26 @@ navigate(){
     this.router.navigate(['retail-add']);
   }
   if (this. customerTypeTabIndex == 1 && this. customerTabIndex == 2) {
-    this.router.navigate(['retail-inquire']);
+    this.router.navigate(['retail-inquire',this.customerCode]);
   }
   if (this. customerTypeTabIndex == 1 && this. customerTabIndex == 3) {
-    this.router.navigate(['retail-modify']);
+    this.router.navigate(['retail-modify',this.customerCode]);
   }
   if (this. customerTypeTabIndex == 1 && this. customerTabIndex == 4) {
-    this.router.navigate(['retail-delete']);
+    this.router.navigate(['retail-delete',this.customerCode]);
   }
 
   if (this. customerTypeTabIndex == 2 && this.customerTabIndex==1) {
     this.router.navigate(['corporate-add']);
   }
   if (this. customerTypeTabIndex == 2 && this. customerTabIndex == 2) {
-    this.router.navigate(['corporate-inquire']);
+    this.router.navigate(['corporate-inquire',this.customerCode]);
   }
   if (this. customerTypeTabIndex == 2 && this. customerTabIndex == 3) {
-    this.router.navigate(['corporate-modify']);
+    this.router.navigate(['corporate-modify',this.customerCode]);
   }
   if (this. customerTypeTabIndex == 2 && this. customerTabIndex == 4) {
-    this.router.navigate(['corporate-delete']);
+    this.router.navigate(['corporate-delete',this.customerCode]);
   }
 }
 }

@@ -1,0 +1,234 @@
+<mat-card class="container-fluid">
+  <div>
+      <h3  class="text-center">Inquire A Savings Product</h3>
+  </div>
+  
+  <mat-divider></mat-divider>
+  <form class="form">
+    <mat-tab-group>
+        <mat-tab label="Product Details">
+    
+          <div class="container-fluid mt-4 mb-2">
+    
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group row">
+                  <div class="col-md-5 col-sm-12 form-column ">
+                    <label class="form-label start pull-left">Scheme Code<span class="warning">*</span></label>
+                  </div>
+                  <div class="col-md-6 col-8 form-column ">
+                    <input name="schemeCode" [(ngModel)]="sbproduct.schemeCode" readonly oninput ="this.value=this.value.toUpperCase()"
+                     type="text" class="form-control" />
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group row">
+                  <div class="col-md-5 col-sm-12 form-column ">
+                    <label class="form-label start pull-left">Product Description<span class="warning">*</span></label>
+                  </div>
+                  <div class="col-md-6 col-8 form-column ">
+                    <input type="text" name="productDescription" [(ngModel)]="sbproduct.productDescription"  readonly oninput ="this.value=this.value.toUpperCase()"
+                     class="form-control" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group row">
+                  <div class="col-md-5 col-sm-12 form-column ">
+                    <label class="form-label start pull-left">Branch Code<span class="warning">*</span></label>
+                  </div>
+                  <div class="col-md-6 col-8 form-column ">
+                    <input readonly name="solCode" [(ngModel)]="sbproduct.solCode" readonly
+                     type="text" class="form-control" />
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group row">
+                  <div class="col-md-5 col-sm-12 form-column ">
+                    <label class="form-label start pull-left">Interest Code<span class="warning">*</span></label>
+                  </div>
+                  <div class="col-md-6 col-8 form-column ">
+                    <input readonly name="interestCode" [(ngModel)]="sbproduct.interestCode" readonly
+                     type="text" class="form-control" />
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group row">
+                  <div class="col-md-5 col-sm-12 form-column ">
+                    <label class="form-label start pull-left">Statement Frequency<span class="warning">*</span></label>
+                  </div>
+                  <div class="col-md-6 col-8 form-column ">
+                    <input name="acctStatementFrequency" [(ngModel)]="sbproduct.acctStatementFrequency" readonly
+                     type="date" class="form-control" />
+                  </div>
+
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group row">
+                  <div class="col-md-5 col-sm-12 form-column ">
+                    <label class="form-label start pull-left">Inactive After(Days)<span class="warning">*</span></label>
+                  </div>
+                  <div class="col-md-6 col-8 form-column ">
+                    <input name="durationToInactivity" [(ngModel)]="sbproduct.durationToInactivity" readonly
+                     type="number" class="form-control" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group row">
+                  <div class="col-md-5 col-sm-12 form-column ">
+                    <label class="form-label start pull-left">Number of Withdrawals<span class="warning">*</span></label>
+                  </div>
+                  <div class="col-md-6 col-8 form-column ">
+                    <input name="noOfWithdrawals" [(ngModel)]="sbproduct.noOfWithdrawals" readonly
+                     type="number" class="form-control" />
+                  </div>
+
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group row">
+                  <div class="col-md-5 col-sm-12 form-column ">
+                    <label class="form-label start pull-left">Dormant to Inactive (Days)<span class="warning">*</span></label>
+                  </div>
+                  <div class="col-md-6 col-8 form-column ">
+                    <input  name="durationFromDormancyToInactivity" [(ngModel)]="sbproduct.durationFromDormancyToInactivity" readonly
+                     type="number" class="form-control" />
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group row">
+                  <div class="col-md-5 col-sm-12 form-column ">
+                    <label class="form-label start pull-left">Debit Balance Limit<span class="warning">*</span></label>
+                  </div>
+                  <div class="col-md-6 col-8 form-column ">
+                    <input name="drBalanceLimit" [(ngModel)]="sbproduct.drBalanceLimit" readonly
+                     type="number" class="form-control" />
+                  </div>
+
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group row">
+                  <div class="col-md-5 col-sm-12 form-column ">
+                    <label class="form-label start pull-left">Minimum Balance(Cheque)<span class="warning">*</span></label>
+                  </div>
+                  <div class="col-md-6 col-8 form-column ">
+                    <input  name="minimumBalanceWithCheque" [(ngModel)]="sbproduct.minimumBalanceWithCheque" readonly
+                     type="number" class="form-control" />
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+
+
+        </div>
+            
+        </mat-tab>
+        <mat-tab label="Charges">
+          <div class="container-fluid mt-4 mb-2">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group row">
+                  <div class="col-md-5 col-sm-12 form-column">
+                    <label class="form-label start pull-left"
+                      >Dormant Fee<span class="warning">*</span></label
+                    >
+                  </div>
+                  <div class="col-md-6 col-8 form-column">
+                    <input
+                      name="dormantFeeCharge" readonly
+                      [(ngModel)]="sbproduct.dormantFeeCharge"
+                      type="number"
+                      
+                      class="form-control"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group row">
+                  <div class="col-md-5 col-sm-12 form-column">
+                    <label class="form-label start pull-left"
+                      >Inactive Fee<span class="warning">*</span></label
+                    >
+                  </div>
+                  <div class="col-md-6 col-8 form-column">
+                    <input
+                      name="inactiveFeeCharge" readonly
+                      [(ngModel)]="sbproduct.inactiveFeeCharge"
+                      type="number"
+                      
+                      class="form-control"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+    
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group row">
+                  <div class="col-md-5 col-sm-12 form-column">
+                    <label class="form-label start pull-left"
+                      >Ledger Fee<span class="warning">*</span></label
+                    >
+                  </div>
+                  <div class="col-md-6 col-8 form-column">
+                    <input
+                      type="number" readonly
+                      [(ngModel)]="sbproduct.ledgerFee"
+                      name="ledgerFee"
+                      
+                      class="form-control"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-group row">
+                  <div class="col-md-5 col-sm-12 form-column">
+                    <label class="form-label start pull-left"
+                      >Extra Withdrawal Fee<span class="warning">*</span></label
+                    >
+                  </div>
+                  <div class="col-md-6 col-8 form-column">
+                    <input
+                      type="number" readonly
+                      [(ngModel)]="sbproduct.extraWithdrawalFee"
+                      name="extraWithdrawalFee"
+                      
+                      class="form-control"
+                    />
+                  </div>
+                </div>
+              </div>
+    
+            </div>
+          </div>
+        </mat-tab>
+    </mat-tab-group>
+    
+    </form>
+</mat-card>

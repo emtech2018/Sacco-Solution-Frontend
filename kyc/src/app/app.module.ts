@@ -16,6 +16,10 @@ import { CorporateComponent } from './components/lookup/corporate/corporate.comp
 import { RetailComponent } from './components/lookup/retail/retail.component';
 import { EmployerComponent } from './components/lookup/employer/employer.component';
 
+import {MatRadioModule} from '@angular/material/radio';
+
+
+
 import {FormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -34,6 +38,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatTabsModule} from '@angular/material/tabs';
+import { FailureComponent } from './components/status/failure/failure.component';
+import { SuccessComponent } from './components/status/success/success.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +55,9 @@ import {MatTabsModule} from '@angular/material/tabs';
     CorporateModifyComponent,
     CorporateComponent,
     RetailComponent,
-    EmployerComponent
+    EmployerComponent,
+    FailureComponent,
+    SuccessComponent
   ],
   imports: [
     BrowserModule,
@@ -68,7 +76,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     HttpClientModule,
     MatDialogModule,
     MatProgressSpinnerModule,
-    MatTabsModule
+    MatTabsModule,
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]

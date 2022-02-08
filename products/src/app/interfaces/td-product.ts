@@ -1,0 +1,20 @@
+export interface tdProduct{
+    deletedBy?: string,
+    deletedFlag?: string,
+    deletedTime?: Date,
+    interestCode?: string,
+    maximumPeriod?: number,
+    minimumPeriod?: number,
+    modifiedBy?: string,
+    modifiedTime?: Date,
+    postedBy?: string,
+    postedFlag?: string,
+    postedTime?: Date,
+    schemeCode?: string,
+    sn?: number,
+    solCode?: string,
+    verifiedBy?: string,
+    verifiedFlag?: string,
+    verifiedTime?: Date
+    productDescription?: string,
+  }

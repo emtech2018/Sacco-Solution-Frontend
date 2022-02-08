@@ -1,179 +1,418 @@
 <mat-card class="container-fluid">
-    <div>
-        <h3  class="text-center">Add A Product</h3>
-    </div>
-    
-    <mat-divider></mat-divider>
-  <form class="form" (ngSubmit)="productDelete()">
-
-
-<div class="container-fluid mt-4">
-
-    <div class="row">
-      <div class="col-md-6">
-        <div class="form-group row">
-          <div class="col-md-5 col-sm-12 form-column ">
-            <label class="form-label start pull-left">Scheme Code<span class="warning">*</span></label>
-          </div>
-          <div class="col-md-6 col-8 form-column ">
-            <input name="schemeCode" oninput ="this.value=this.value.toUpperCase()" readonly
-            [(ngModel)]="product.schemeCode" type="text" class="form-control" />
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="form-group row">
-          <div class="col-md-5 col-sm-12 form-column ">
-            <label class="form-label start pull-left">Product Description<span class="warning">*</span></label>
-          </div>
-          <div class="col-md-6 col-8 form-column ">
-            <input type="text" name="productDescription" oninput ="this.value=this.value.toUpperCase()" readonly
-            [(ngModel)]="product.productDescription" class="form-control" />
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="form-group row">
-          <div class="col-md-5 col-sm-12 form-column ">
-            <label class="form-label start pull-left">Branch Code<span class="warning">*</span></label>
-          </div>
-          <div class="col-md-6 col-8 form-column ">
-            <input readonly name="solCode"
-            [(ngModel)]="product.solCode" type="text" class="form-control" readonly />
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="form-group row">
-          <div class="col-md-5 col-sm-12 form-column ">
-            <label class="form-label start pull-left">Interest Code<span class="warning">*</span></label>
-          </div>
-          <div class="col-md-6 col-8 form-column ">
-            <input readonly name="interestCode" 
-            [(ngModel)]="product.interestCode" type="text" class="form-control" />
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="form-group row">
-          <div class="col-md-5 col-sm-12 form-column ">
-            <label class="form-label start pull-left">Processing Fee<span class="warning">*</span></label>
-          </div>
-          <div class="col-md-6 col-8 form-column ">
-            <input name="processingFee"
-            [(ngModel)]="product.processingFee" type="number" class="form-control" readonly/>
-          </div>
-
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="form-group row">
-          <div class="col-md-5 col-sm-12 form-column ">
-            <label class="form-label start pull-left">Intake Fee<span class="warning">*</span></label>
-          </div>
-          <div class="col-md-6 col-8 form-column ">
-            <input name="intakeFee" readonly
-            [(ngModel)]="product.intakeFee" type="number" class="form-control" />
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="form-group row">
-          <div class="col-md-5 col-sm-12 form-column ">
-            <label class="form-label start pull-left">Interest Base<span class="warning">*</span></label>
-          </div>
-          <div class="col-md-6 col-8 form-column ">
-            <select readonly name="interestBase" disabled readonly
-            [(ngModel)]="product.interestBase">
-            <option value="D">DAILY</option>
-            <option value="W">WEEKLY</option>
-            <option value="F">FORTNIGHTLY</option>
-            <option value="M">MONTHLY</option>
-            <option value="Q">QUARTERLY</option>
-            <option value="A">ANNUALLY</option>
-            </select>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="form-group row">
-          <div class="col-md-5 col-sm-12 form-column ">
-            <label class="form-label start pull-left">Calculation Base<span class="warning">*</span></label>
-          </div>
-          <div class="col-md-6 col-8 form-column ">
-            <select readonly name="calculationBase" disabled readonly
-            [(ngModel)]="product.calculationBase">
-            <option value="D">DAILY</option>
-            <option value="W">WEEKLY</option>
-            <option value="F">FORTNIGHTLY</option>
-            <option value="M">MONTHLY</option>
-            <option value="Q">QUARTERLY</option>
-            <option value="A">ANNUALLY</option>
-
-            </select>
-          </div>
-
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="form-group row">
-          <div class="col-md-5 col-sm-12 form-column ">
-            <label class="form-label start pull-left">Repayment Account<span class="warning">*</span></label>
-          </div>
-          <div class="col-md-6 col-8 form-column ">
-            <input readonly name="repaymentAccount"
-            [(ngModel)]="product.interestRepaymentAccount" type="text" class="form-control" readonly/>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="form-group row">
-          <div class="col-md-5 col-sm-12 form-column ">
-            <label class="form-label start pull-left">Repayment Base<span class="warning">*</span></label>
-          </div>
-          <div class="col-md-6 col-8 form-column ">
-            <select readonly name="repaymentBasis" disabled readonly
-            [(ngModel)]="product.repaymentBasis">
-            <option value="D">DAILY</option>
-            <option value="W">WEEKLY</option>
-            <option value="F">FORTNIGHTLY</option>
-            <option value="M">MONTHLY</option>
-            <option value="Q">QUARTERLY</option>
-            <option value="A">ANNUALLY</option>
-            </select>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="form-group row">
-          <div class="col-md-5 col-sm-12 form-column ">
-            <label class="form-label start pull-left">Late Repayment Fee<span class="warning">*</span></label>
-          </div>
-          <div class="col-md-6 col-8 form-column ">
-            <input type="number" name="lateRepaymentFee" readonly
-            [(ngModel)]="product.lateRepaymentFee" class="form-control" />
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="row container-fluid mt-4">
+  <div>
+      <h3  class="text-center">Delete A Loan Product</h3>
+  </div>
   
-        <div class="col-md-1 col-4 offset-md-10">
-      <button mat-raised-button class="btn bg-danger go mx-auto d-block text-light" type="submit">Delete</button>
+  <mat-divider></mat-divider>
+<form class="form" (ngSubmit)="productDelete()">
+
+
+  <mat-tab-group>
+    <mat-tab label="Product Details">
+      <div class="container-fluid mt-4 mb-2">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group row">
+              <div class="col-md-5 col-sm-12 form-column">
+                <label class="form-label start pull-left"
+                  >Scheme Code<span class="warning">*</span></label
+                >
+              </div>
+              <div class="col-md-6 col-8 form-column">
+                <input
+                  name="schemeCode"
+                  oninput="this.value=this.value.toUpperCase()"
+                  [(ngModel)]="product.schemeCode" readonly
+                  type="text"
+                  class="form-control"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group row">
+              <div class="col-md-5 col-sm-12 form-column">
+                <label class="form-label start pull-left"
+                  >Product Description<span class="warning">*</span></label
+                >
+              </div>
+              <div class="col-md-6 col-8 form-column">
+                <input
+                  type="text"
+                  name="productDescription"
+                  oninput="this.value=this.value.toUpperCase()"
+                  [(ngModel)]="product.productDescription" readonly
+                  class="form-control"
+                />
+              </div>
+            </div>
+          </div>
         </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group row">
+              <div class="col-md-5 col-sm-12 form-column">
+                <label class="form-label start pull-left"
+                  >Branch Code<span class="warning">*</span></label
+                >
+              </div>
+              <div class="col-md-6 col-8 form-column">
+                <input
+                  readonly
+                  name="solCode"
+                  [(ngModel)]="product.solCode"
+                  type="text"
+                  class="form-control"
+                />
+              </div>
+
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group row">
+              <div class="col-md-5 col-sm-12 form-column">
+                <label class="form-label start pull-left"
+                  >Interest Code<span class="warning">*</span></label
+                >
+              </div>
+              <div class="col-md-6 col-8 form-column">
+                <input
+                  readonly
+                  name="interestCode"
+                  [(ngModel)]="product.interestCode"
+                  type="text"
+                  class="form-control"
+                />
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group row">
+              <div class="col-md-5 col-sm-12 form-column">
+                <label class="form-label start pull-left"
+                  >Interest Base<span class="warning">*</span></label
+                >
+              </div>
+              <div class="col-md-6 col-8 form-column">
+                <select
+                  readonly
+                  name="interestBase"
+                  [(ngModel)]="product.interestBase" disabled
+                >
+                  <option value="D">DAILY</option>
+                  <option value="W">WEEKLY</option>
+                  <option value="F">FORTNIGHTLY</option>
+                  <option value="M">MONTHLY</option>
+                  <option value="Q">QUARTERLY</option>
+                  <option value="A">ANNUALLY</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group row">
+              <div class="col-md-5 col-sm-12 form-column">
+                <label class="form-label start pull-left"
+                  >Calculation Base<span class="warning">*</span></label
+                >
+              </div>
+              <div class="col-md-6 col-8 form-column">
+                <select
+                  readonly
+                  name="calculationBase"
+                  [(ngModel)]="product.calculationBase" disabled
+                >
+                  <option value="D">DAILY</option>
+                  <option value="W">WEEKLY</option>
+                  <option value="F">FORTNIGHTLY</option>
+                  <option value="M">MONTHLY</option>
+                  <option value="Q">QUARTERLY</option>
+                  <option value="A">ANNUALLY</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group row">
+              <div class="col-md-5 col-sm-12 form-column">
+                <label class="form-label start pull-left"
+                  >Repayment Account<span class="warning">*</span></label
+                >
+              </div>
+              <div class="col-md-6 col-8 form-column">
+                <input
+                  readonly
+                  name="repaymentAccount"
+                  [(ngModel)]="product.interestRepaymentAccount"
+                  type="text"
+                  class="form-control"
+                />
+              </div>
+
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group row">
+              <div class="col-md-5 col-sm-12 form-column">
+                <label class="form-label start pull-left"
+                  >Repayment Base<span class="warning">*</span></label
+                >
+              </div>
+              <div class="col-md-6 col-8 form-column">
+                <select
+                  readonly
+                  name="repaymentBasis"
+                  [(ngModel)]="product.repaymentBasis" disabled
+                >
+                  <option value="D">DAILY</option>
+                  <option value="W">WEEKLY</option>
+                  <option value="F">FORTNIGHTLY</option>
+                  <option value="M">MONTHLY</option>
+                  <option value="Q">QUARTERLY</option>
+                  <option value="A">ANNUALLY</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group row">
+              <div class="col-md-5 col-sm-12 form-column">
+                <label class="form-label start pull-left"
+                  >Grace Period<span class="warning">*</span></label
+                >
+              </div>
+              <div class="col-md-6 col-8 form-column">
+                <input
+                  
+                  name="gracePeriod"
+                  [(ngModel)]="product.gracePeriod" disabled
+                  type="number"
+                  class="form-control"
+                />
+              </div>
+
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group row">
+              <div class="col-md-5 col-sm-12 form-column">
+                <label class="form-label start pull-left"
+                  >Grace Period Base<span class="warning">*</span></label
+                >
+              </div>
+              <div class="col-md-6 col-8 form-column">
+                <select
+                  readonly
+                  name="gracePeriodBase"
+                  [(ngModel)]="product.gracePeriodBase" disabled
+                >
+                  <option value="D">DAILY</option>
+                  <option value="W">WEEKLY</option>
+                  <option value="F">FORTNIGHTLY</option>
+                  <option value="M">MONTHLY</option>
+                  <option value="Q">QUARTERLY</option>
+                  <option value="A">ANNUALLY</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group row">
+              <div class="col-md-5 col-sm-12 form-column">
+                <label class="form-label start pull-left"
+                  >Minimum Amount<span class="warning">*</span></label
+                >
+              </div>
+              <div class="col-md-6 col-8 form-column">
+                <input
+                  name="minimumAmount"
+                  oninput="this.value=this.value.toUpperCase()"
+                  [(ngModel)]="product.minimumAmount" readonly
+                  type="number"
+                  class="form-control"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group row">
+              <div class="col-md-5 col-sm-12 form-column">
+                <label class="form-label start pull-left"
+                  >Maximum Amount<span class="warning">*</span></label
+                >
+              </div>
+              <div class="col-md-6 col-8 form-column">
+                <input
+                  type="number"
+                  name="maxAmount"
+                  oninput="this.value=this.value.toUpperCase()"
+                  [(ngModel)]="product.maxAmount" readonly
+                  class="form-control"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group row">
+              <div class="col-md-5 col-sm-12 form-column">
+                <label class="form-label start pull-left"
+                  >Minimum Period(months)<span class="warning">*</span></label
+                >
+              </div>
+              <div class="col-md-6 col-8 form-column">
+                <input
+                  name="minimumLoanPeriod"
+                  oninput="this.value=this.value.toUpperCase()"
+                  [(ngModel)]="product.minimumLoanPeriod" readonly
+                  type="number"
+                  class="form-control"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group row">
+              <div class="col-md-5 col-sm-12 form-column">
+                <label class="form-label start pull-left"
+                  >Maximum Period(months)<span class="warning">*</span></label
+                >
+              </div>
+              <div class="col-md-6 col-8 form-column">
+                <input
+                  type="number"
+                  name="maximumLoanPeriod"
+                  oninput="this.value=this.value.toUpperCase()"
+                  [(ngModel)]="product.maximumLoanPeriod" readonly
+                  class="form-control"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group row">
+              <div class="col-md-5 col-sm-12 form-column">
+                <label class="form-label start pull-left"
+                  >Multiple Factor<span class="warning">*</span></label
+                >
+              </div>
+              <div class="col-md-6 col-8 form-column">
+                <input
+                  name="multipleFactor"
+                  oninput="this.value=this.value.toUpperCase()"
+                  [(ngModel)]="product.multipleFactor" readonly
+                  type="number"
+                  class="form-control"
+                />
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
       </div>
 
-</div>
+
+    </mat-tab>
+    <mat-tab label="Charges">
+      <div class="container-fluid mt-4 mb-2">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group row">
+              <div class="col-md-5 col-sm-12 form-column">
+                <label class="form-label start pull-left"
+                  >Processing Fee<span class="warning">*</span></label
+                >
+              </div>
+              <div class="col-md-6 col-8 form-column">
+                <input
+                  name="processingFee"
+                  [(ngModel)]="product.processingFee" readonly
+                  type="number"
+                  
+                  class="form-control"
+                />
+              </div>
+
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group row">
+              <div class="col-md-5 col-sm-12 form-column">
+                <label class="form-label start pull-left"
+                  >Intake Fee<span class="warning">*</span></label
+                >
+              </div>
+              <div class="col-md-6 col-8 form-column">
+                <input
+                  name="intakeFee"
+                  [(ngModel)]="product.intakeFee" readonly
+                  type="number"
+                  
+                  class="form-control"
+                />
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group row">
+              <div class="col-md-5 col-sm-12 form-column">
+                <label class="form-label start pull-left"
+                  >Late Repayment Fee<span class="warning">*</span></label
+                >
+              </div>
+              <div class="col-md-6 col-8 form-column">
+                <input
+                  type="number"
+                  
+                  name="lateRepaymentFee" readonly
+                  [(ngModel)]="product.lateRepaymentFee"
+                  class="form-control"
+                />
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </mat-tab>
+
+    <mat-tab label="Submission">
+      <div class="row container-fluid mt-4 mb-2">
+        <div class="col-md-1 col-4">
+          <button
+            mat-raised-button
+            class="btn bg-danger go mx-auto d-block text-light"
+            type="submit"
+          >
+            Delete
+          </button>
+        </div>
+      </div>
+    </mat-tab>
+
+  </mat-tab-group>
 </form>
 </mat-card>

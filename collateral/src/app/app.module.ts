@@ -30,6 +30,8 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { SuccessComponent } from './components/status/success/success.component';
+import { FailureComponent } from './components/status/failure/failure.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     CollateralAddComponent,
     CollateralInquireComponent,
     CollateralModifyComponent,
-    CollateralDeleteComponent
+    CollateralDeleteComponent,
+    SuccessComponent,
+    FailureComponent
   ],
   imports: [
     BrowserModule,

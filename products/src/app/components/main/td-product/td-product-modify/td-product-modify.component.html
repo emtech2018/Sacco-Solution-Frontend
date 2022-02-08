@@ -1,0 +1,104 @@
+<mat-card class="container-fluid">
+    <div>
+        <h3  class="text-center">Modify A Term-Deposit Product</h3>
+    </div>
+    
+    <mat-divider></mat-divider>
+    <form class="form" (ngSubmit)="tdModify()">
+      <mat-tab-group>
+      
+          <mat-tab label="Product Details">
+        
+            <div class="container-fluid mt-4">
+      
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group row">
+                    <div class="col-md-5 col-sm-12 form-column ">
+                      <label class="form-label start pull-left">Scheme Code<span class="warning">*</span></label>
+                    </div>
+                    <div class="col-md-6 col-8 form-column ">
+                      <input name="schemeCode" [(ngModel)]="tdproduct.schemeCode" maxlength="6" oninput ="this.value=this.value.toUpperCase()"
+                       type="text" class="form-control" />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group row">
+                    <div class="col-md-5 col-sm-12 form-column ">
+                      <label class="form-label start pull-left">Product Description<span class="warning">*</span></label>
+                    </div>
+                    <div class="col-md-6 col-8 form-column ">
+                      <input type="text" name="productDescription" [(ngModel)]="tdproduct.productDescription" oninput ="this.value=this.value.toUpperCase()"
+                       class="form-control" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group row">
+                    <div class="col-md-5 col-sm-12 form-column ">
+                      <label class="form-label start pull-left">Branch Code<span class="warning">*</span></label>
+                    </div>
+                    <div class="col-md-6 col-8 form-column ">
+                      <input readonly name="solCode" [(ngModel)]="tdproduct.solCode"
+                       type="text" class="form-control" />
+                    </div>
+  
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group row">
+                    <div class="col-md-5 col-sm-12 form-column ">
+                      <label class="form-label start pull-left">Interest Code<span class="warning">*</span></label>
+                    </div>
+                    <div class="col-md-6 col-8 form-column ">
+                      <input readonly name="interestCode" [(ngModel)]="tdproduct.interestCode"
+                       type="text" class="form-control" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group row">
+                    <div class="col-md-5 col-sm-12 form-column ">
+                      <label class="form-label start pull-left">Minimum Period(Months)<span class="warning">*</span></label>
+                    </div>
+                    <div class="col-md-6 col-8 form-column ">
+                      <input name="minimumPeriod" [(ngModel)]="tdproduct.minimumPeriod"
+                       type="number" class="form-control" />
+                    </div>
+          
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group row">
+                    <div class="col-md-5 col-sm-12 form-column ">
+                      <label class="form-label start pull-left">Maximum Period(Months)<span class="warning">*</span></label>
+                    </div>
+                    <div class="col-md-6 col-8 form-column ">
+                      <input name="maximumPeriod"[(ngModel)]="tdproduct.maximumPeriod"
+                      type="number" class="form-control" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+          
+  
+          </div>
+              
+          </mat-tab>
+          <mat-tab label="Submission">
+            <div class="row container-fluid mt-4">
+        
+              <div class="col-md-1 col-4">
+            <button mat-raised-button class="btn bg-success go mx-auto d-block text-light" type="submit">Submit</button>
+              </div>
+            </div>
+          </mat-tab>
+      </mat-tab-group>
+      
+      </form>
+</mat-card>

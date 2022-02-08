@@ -1,6 +1,6 @@
 <mat-card class="container-fluid">
     <div>
-      <h3 class="text-center">Inquire An Interest</h3>
+      <h3 class="text-center">Modify An Interest</h3>
     </div>
   
     <mat-divider></mat-divider>
@@ -15,7 +15,7 @@
                 >
               </div>
               <div class="col-md-6 col-8 form-column">
-                <input readonly name="interestCode" oninput ="this.value=this.value.toUpperCase()"
+                <input name="interestCode" oninput ="this.value=this.value.toUpperCase()" maxlength="6"
                 type="text" class="form-control" [(ngModel)]="interest.interestCode"/>
               </div>
             </div>
@@ -28,7 +28,7 @@
                 >
               </div>
               <div class="col-md-6 col-8 form-column">
-                <input readonly name="currency" oninput ="this.value=this.value.toUpperCase()"
+                <input name="currency" oninput ="this.value=this.value.toUpperCase()"
                type="text" class="form-control" [(ngModel)]="interest.currency"/>
               </div>
             </div>
@@ -43,7 +43,7 @@
                 >
               </div>
               <div class="col-md-6 col-8 form-column">
-                <input readonly name="startDate" 
+                <input name="startDate" 
                 type="date" class="form-control" [(ngModel)]="interest.startDate"/>
               </div>
             </div>
@@ -56,7 +56,7 @@
                 >
               </div>
               <div class="col-md-6 col-8 form-column">
-                <input readonly name="endDate"
+                <input name="endDate"
                 type="date" class="form-control" [(ngModel)]="interest.endDate"/>
               </div>
             </div>
@@ -108,7 +108,7 @@
                   >To</label
                 >
                 <div class="col-md-7">
-                  <input readonly type="number" required class="form-control"  name="cto{{i}}"
+                  <input [readonly]="i!=clength-1" [required]="interest.fullDiff=='D'" [disabled]="interest.fullDiff=='F'" type="number" class="form-control"  name="cto{{i}}"
                   [(ngModel)]="c.toAmount"
                   />
                 </div>
@@ -120,9 +120,9 @@
                   >Rate</label
                 >
                 <div class="col-md-7">
-                  <input readonly
+                  <input 
                     type="number"
-                    step=".00000001"
+                    step=".01"
                     required
                     class="form-control"
                     name="crate{{i}}"
@@ -176,7 +176,7 @@
                   >To</label
                 >
                 <div class="col-md-7">
-                  <input readonly type="number" required class="form-control"  name="dto{{i}}"
+                  <input [readonly]="i!=dlength-1" [required]="interest.fullDiff=='D'" [disabled]="interest.fullDiff=='F'" type="number" class="form-control"  name="dto{{i}}"
                   [(ngModel)]="d.toAmount"
                   />
                 </div>
@@ -188,9 +188,9 @@
                   >Rate</label
                 >
                 <div class="col-md-7">
-                  <input readonly
+                  <input 
                     type="number"
-                    step=".00000001"
+                    step=".01"
                     required
                     class="form-control"
                     name="drate{{i}}"

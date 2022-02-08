@@ -24,14 +24,22 @@ export class ProductAddComponent implements OnInit {
   productDescription!: string;
   interestBase!: string;
   repaymentBasis!: string;
-  processingFee!: number;
-  lateRepaymentFee!: number;
+  processingFee;
+  lateRepaymentFee;
   calculationBase!: string;
   repaymentAccount!: string;
   interestCode!: string;
   productType!: String;
-  intakeFee!: number;
+  intakeFee;
   solCode!: string;
+  gracePeriodBase!: string;
+
+  gracePeriod;
+  maxAmount;
+  maximumLoanPeriod;
+  minimumAmount;
+  minimumLoanPeriod;
+  multipleFactor;
 
   constructor(
     private router: Router,
@@ -62,6 +70,14 @@ export class ProductAddComponent implements OnInit {
     this.product.modifiedBy = 'KAMAU';
     this.product.postedTime = new Date();
     this.product.verifiedFlag = 'Y';
+
+    this.product.gracePeriodBase=this.gracePeriodBase;
+    this.product.gracePeriod=this.gracePeriod;
+    this.product.maxAmount=this.maxAmount;
+    this.product.maximumLoanPeriod=this.maximumLoanPeriod;
+    this.product.minimumAmount=this.minimumAmount;
+    this.product.minimumLoanPeriod=this.minimumLoanPeriod;
+    this.product.multipleFactor=this.multipleFactor;
 
     console.log(this.product);
 
