@@ -19,9 +19,6 @@ export class GlAddComponent implements OnInit {
   available: boolean=false;
   show: boolean=false;
   
-  //  String[= this.gl.glCode
-  // userForm: any;
-  // formBuilder: any;
 
   constructor( private glservice:GlService,
     private dialogRef:MatDialog,

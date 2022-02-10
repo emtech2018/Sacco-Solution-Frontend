@@ -1,1 +1,100 @@
-<p>inquire-branch works!</p>
+<mat-card class="container-fluid mt-4">
+    <mat-card-header>
+        <h3 text-center>Inquire A Branch</h3>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <br>
+    <div>
+        <form action="" class="form" novalidate>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <div class="col-md-5 col-sm-12 form-column">
+                            <label for="" class="start pull-left">
+                                Branch Code<span class="warning">*</span></label>
+                        </div>
+                        <div class="col-md-6 col-8 form-column">
+                            <input type="text" value="{{this.branch.entity.solCode}}" name="solCode">
+                            <br>
+                            <!-- <span *ngIf="this.show==true" style="color: red; font: size 6px;;">*Branch Code already exists!!</span> -->
+                        </div> 
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <div class="col-md-5 col-sm-12 form-column">
+                            <label for="" class="start pull-left">
+                                Branch Description<span class="warning">*</span>
+                            </label>
+                        </div>
+                        <div class="col-md-5">
+                            <input type="text" name="branchDescription" value="{{this.branch.entity.branchDescription}}" readonly >
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <div class="col-md-5 col-sm-12 form-column">
+                            <label for="" class="start pull-left">
+                                Email<span class="warning">*</span></label>
+                        </div>
+                        <div class="col-md-6 col-8 form-column">
+                            <input type="text" name="email"
+                            value="{{this.branch.entity.email}}" readonly>
+                        </div> 
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <div class="col-md-5 col-sm-12 form-column">
+                            <label for="" class="start pull-left">
+                                Phone Number<span class="warning">*</span>
+                            </label>
+                        </div>
+                        <div class="col-md-5">
+                            <input type="text" name="phoneNumber" value="{{this.branch.entity.phoneNumber}}" readonly >
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <div class="col-md-5 col-sm-12 form-column">
+                            <label for="" class="start pull-left">
+                                Location<span class="warning">*</span>
+                            </label>
+                        </div>
+                        <div class="col-md-5">
+                            <input type="text" name="location" value="{{this.branch.entity.location}}" readonly >
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="row container-fluid mt-4">
+                <div class="col-md-1 offset-md-10 col-4">
+                    <!-- <button mat-raised-button color="warn" class="btn go mx-auto d-block bg-warning" type="reset" style="width: 76.43px;">Reset</button> -->
+                      </div>
+                
+                      <div class="col-md-1 col-4">
+                    <!-- <button mat-raised-button class="btn bg-success go mx-auto d-block text-light" type="submit" style="width: fit-content;">Submit</button> -->
+                      </div>
+
+            </div>
+        </form>
+    </div>
+
+</mat-card>

@@ -11,40 +11,55 @@ public class Branch {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long sn;
     @Column(length = 6, nullable = false, unique = true)
-    @JsonProperty
+    @JsonProperty(required = true)
     private String solCode;
+
     @Column(length = 200, nullable = false, unique = false)
     private String branchDescription;
-    @Column(length = 100, nullable = false, unique = false)
+
+    @Column(length = 20, nullable = false, unique = false)
     private  String location;
+
     @Column(length = 100, nullable = false,unique = false)
     private String email;
-    @Column(length = 13, nullable = false, unique = false)
+
+    @Column(length = 12, nullable = false, unique = false)
     private String phoneNumber;
+
     @Temporal(TemporalType.TIMESTAMP)
     @Column(nullable = false)
     private Date postedTime;
+
     @Column(length = 100, nullable = false, unique = false)
     private String postedBy;
+
     @Column(nullable = false)
     private Character postedFlag;
+
     @Temporal(TemporalType.TIMESTAMP)
     @Column(nullable = false)
     private Date verifiedTime;
+
     @Column(length = 100, nullable = false, unique = false)
     private String verifiedBy;
+
     @Column(nullable = false)
     private Character verifiedFlag;
+
     @Temporal(TemporalType.TIMESTAMP)
     @Column(nullable = false)
     private Date deletedTime;
+
     @Column(length = 100, nullable = false, unique = false)
     private String deletedBy;
+
     @Column(nullable = false)
     private Character deletedFlag;
+
     @Temporal(TemporalType.TIMESTAMP)
     @Column(nullable = false, updatable = false)
     private Date modifiedTime;
+
     @Column(length = 100,nullable = false, unique = false)
     private String modifiedBy;
 

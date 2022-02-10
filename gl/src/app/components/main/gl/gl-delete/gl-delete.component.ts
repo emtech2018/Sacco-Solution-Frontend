@@ -21,7 +21,7 @@ export class GlDeleteComponent implements OnInit {
 
   deleteGl(){
   
-    this.gl.entity.deletedFlag = "Y";
+    this.gl.entity.deletedFlag = 'Y';
     this.gl.entity.deletedTime = new Date();
     this.gl.entity.deletedBy = "Wanjiru";
 

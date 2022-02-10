@@ -10,6 +10,26 @@ import { ModifyBranchComponent } from './components/main/branch/modify-branch/mo
 import { DeleteBranchComponent } from './components/main/branch/delete-branch/delete-branch.component';
 import { BranchComponent } from './components/lookup/branch/branch.component';
 
+import { FormsModule } from '@angular/forms';
+import {MatCardModule}  from '@angular/material/card';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { MatDividerModule} from '@angular/material/divider';
+import {MatIconModule} from '@angular/material/icon';
+import {MatSelectModule} from '@angular/material/select';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatTableModule} from '@angular/material/table';
+import {MatInputModule}  from '@angular/material/input';
+import {MatSortModule } from '@angular/material/sort';
+import { MatDialogModule } from '@angular/material/dialog';
+import { HttpClientModule } from '@angular/common/http';
+
+
+import { FailureComponent } from './components/status/failure/failure.component';
+import { SuccessComponent } from './components/status/success/success.component';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,11 +38,28 @@ import { BranchComponent } from './components/lookup/branch/branch.component';
     InquireBranchComponent,
     ModifyBranchComponent,
     DeleteBranchComponent,
-    BranchComponent
+    BranchComponent,
+    FailureComponent,
+    SuccessComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    MatCardModule,
+    MatDividerModule,
+    MatIconModule,
+    MatSelectModule,
+    MatProgressSpinnerModule,
+    MatPaginatorModule,
+    MatTableModule,
+    MatInputModule,
+    MatSortModule,
+    MatDialogModule,
+    HttpClientModule
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]

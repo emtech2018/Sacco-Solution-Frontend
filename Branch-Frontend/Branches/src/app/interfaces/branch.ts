@@ -1,5 +1,5 @@
 export interface Branch {
-
+    sn ?: 0;
     solCode ?: string;
     branchDescription ?: string;
     phoneNumber ?: string;

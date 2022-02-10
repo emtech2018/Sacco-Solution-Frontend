@@ -12,9 +12,9 @@ import { GlService } from 'src/app/services/gl.service';
 export class GlModifyComponent implements OnInit {
   // gl : Response = this.route.snapshot.data['gl'];
   gl :Response = this.route.snapshot.data['gl'];
-  glCode !: string;
-  glDescription !: string;
-  allgls : Gl[] =[]
+  // glCode !: string;
+  // glDescription !: string;
+
   
 
   constructor( private route:ActivatedRoute, 
@@ -25,24 +25,10 @@ export class GlModifyComponent implements OnInit {
     
    }
 
-  ngOnInit(): void {
-    this.glService.retrieveAllGlDefinitions().subscribe(
-      (data) =>{
-        this.allgls = data.entity
-
-      },
-      (error) =>{}
-    )
-    
+  ngOnInit(): void { 
   }
-
-
-
+  
   submitGl(){
-
-
-
-
    this.glService.updateGlDefinition(this.gl.entity).subscribe(
      (data) =>{
        this.router.navigate(['success'],{
@@ -63,8 +49,8 @@ export class GlModifyComponent implements OnInit {
          }
        });
      }
-   ),
-     console.log(this.glCode);
+   );
+    //  console.log(this.glCode);
      
   }
 

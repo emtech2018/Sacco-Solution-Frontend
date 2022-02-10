@@ -5,14 +5,23 @@ import { AddBranchComponent } from './components/main/branch/add-branch/add-bran
 import { DeleteBranchComponent } from './components/main/branch/delete-branch/delete-branch.component';
 import { ModifyBranchComponent } from './components/main/branch/modify-branch/modify-branch.component';
 import { InquireBranchComponent } from './components/main/branch/inquire-branch/inquire-branch.component';
+import { BranchResolver } from './resolvers/branch.resolver';
 
+
+import { FailureComponent } from './components/status/failure/failure.component';
+import { SuccessComponent } from './components/status/success/success.component';
 
 const routes: Routes = [
   {path:'branch', component:MainBranchComponent},
-  {path: 'add', component:AddBranchComponent},
-  {path: 'delete', component:DeleteBranchComponent},
-  {path: 'modify', component:ModifyBranchComponent},
-  {path: 'inquire', component:InquireBranchComponent}
+  {path: 'add-branch', component:AddBranchComponent},
+  {path: 'inquire-branch/:id', component:InquireBranchComponent, resolve:{branch:BranchResolver}},
+  {path: 'modify-branch/:id', component:ModifyBranchComponent, resolve:{branch:BranchResolver}},
+  {path: 'delete-branch/:id', component:DeleteBranchComponent,resolve:{branch:BranchResolver}},
+
+
+  {path:'failure', component:FailureComponent},
+  {path:'success', component:SuccessComponent}
+  
 ];
 
 @NgModule({

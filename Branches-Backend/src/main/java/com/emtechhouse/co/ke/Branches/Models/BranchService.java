@@ -15,10 +15,7 @@ public class BranchService {
     public BranchRepository branchRepository;
 
     public Branch saveBranch(Branch branch){
-        branch.setEmail("");
         branch.setDeletedFlag(CONSTANTS.No);
-        branch.setVerifiedFlag(CONSTANTS.No);
-        branch.setPostedBy("");
         branch.setPostedTime(new Date());
         branch.setPostedFlag(CONSTANTS.Yes);
 
@@ -28,13 +25,14 @@ public class BranchService {
     public Branch updateBranch(Branch branch){
         return branchRepository.save(branch);
     }
+
     public Branch retrieveBranch(String solCode){
         return branchRepository.findBysolCode(solCode);
 
     }
 
     public List<Branch> retrieveAllBranches(){
-        return branchRepository.findAll();
+        return branchRepository.findBydeletedFlag('N');
     }
 
 }

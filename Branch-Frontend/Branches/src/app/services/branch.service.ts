@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class BranchService {
-private baseUrl: string = "http://127.0.0.1:8080/branches"
+private baseUrl: string = "http://127.0.0.1:8000/branch/"
   constructor(private http:HttpClient) { }
 
 
@@ -22,10 +22,10 @@ private baseUrl: string = "http://127.0.0.1:8080/branches"
   }
 
   retrieveAllBranches():Observable<Response>{
-    return this.http.get<Response>(this.baseUrl+ 'add/')
+    return this.http.get<Response>(this.baseUrl+ 'all/')
   }
 
-  getBranches(id:string){
-    return this.http.get<Response>(this.baseUrl)
+  retrieveBranch(id:string){
+    return this.http.get<Branch>(this.baseUrl+id)
   }
 }

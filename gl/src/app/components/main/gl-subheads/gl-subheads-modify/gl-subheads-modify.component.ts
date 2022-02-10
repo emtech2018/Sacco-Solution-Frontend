@@ -10,7 +10,7 @@ import { GlSubheadsService } from 'src/app/services/gl-subheads.service';
 })
 export class GlSubheadsModifyComponent implements OnInit {
   subhead:Response= this.route.snapshot.data['subhead']
-
+  
   glCode !:string
   glSubheadCode !: string
   glSubheadDescription !: string

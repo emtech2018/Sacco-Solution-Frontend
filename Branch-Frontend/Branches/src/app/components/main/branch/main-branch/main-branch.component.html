@@ -1,1 +1,52 @@
-<p>main-branch works!</p>
+<mat-card class="container-fluid">
+    <mat-card-header>
+        <div>Branches</div>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+  <br>
+    <div class="container-fluid mt-4">
+        <form action="" class="form">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="form-group row">
+                        <div class="col-md-6 col-12 form-column">
+                            <label for="" class="start pull-left">
+                                Function<span class="warning">*</span></label>
+                        </div>
+                        <div class="col-md-6 col-8 form-column">
+                            <select name="" id="" (change)="onClick($event)">
+                                <option value="" disabled>--choose function--</option>
+                                <option value="1">ADD</option>
+                                <option value="2">INQUIRE</option>
+                                <option value="3">MODIFY</option>
+                                <option value="4">DELETE</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5" *ngIf="branchTabIndex !=1">
+                   <div class="form-group row">
+                       <div class="col-md-5 col-12 form-column">
+                           <label for="">Branch Code<span class="warning">*</span></label>
+                       </div>
+                       <div class="col-md-6 col-7 form-column">
+                           <input type="text" [(ngModel)] = "solCode" name = "solCode">
+                       </div>
+                       <div class="col-md-1 col-1">
+                           <mat-icon (click)="branchLookup()">search</mat-icon>
+                       </div>
+                   </div>
+                </div>
+                <div class="col-md-2">
+                        <button mat-raised-button type="button" 
+                        class="btn go mx-auto d-block bg-primary text-light"
+                        (click)="navigate()">GO
+                        </button>
+                </div>
+
+            </div>
+        </form>
+
+    </div>
+
+</mat-card>

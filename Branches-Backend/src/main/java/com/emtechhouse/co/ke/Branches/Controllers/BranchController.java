@@ -20,8 +20,8 @@ public class BranchController {
     @Autowired
     private BranchService branchService;
 
-    @GetMapping("{code}")
-    public ResponseEntity<?> getBranch(@PathVariable("code") String code, HttpServletRequest request){
+    @GetMapping("{solCode}")
+    public ResponseEntity<?> getBranch(@PathVariable("solCode") String code, HttpServletRequest request){
         EntityResponse<Branch> entityResponse = new EntityResponse<>();
         entityResponse.setEntity(branchService.retrieveBranch(code));
         entityResponse.setMessage(Messages.RECORD_FOUND);
@@ -40,37 +40,43 @@ public class BranchController {
     @GetMapping("all")
     public ResponseEntity<?> allBranches(){
         EntityResponse<List<Branch>> entityResponse = new EntityResponse<>();
-        entityResponse.setEntity(branchService.retrieveAllBranches());
-        entityResponse.setStatusCode(HttpStatus.OK.value());
-        entityResponse.setMessage(Messages.RECORD_FOUND);
-        return ResponseEntity.ok().body(entityResponse);
+            entityResponse.setEntity(branchService.retrieveAllBranches());
+            entityResponse.setStatusCode(HttpStatus.OK.value());
+            entityResponse.setMessage(Messages.RECORD_FOUND);
+            return ResponseEntity.ok().body(entityResponse);
+
+
     }
 
     @PutMapping("update")
-    public ResponseEntity<EntityResponse<Branch>> updateBranch(@RequestBody Branch branch){
+    public ResponseEntity<?> updateBranch(@RequestBody Branch branch, HttpServletRequest request){
         EntityResponse<Branch> entityResponse = new EntityResponse<>();
-
-        if(branch.getDeletedFlag().equals(CONSTANTS.Yes) && branch.getVerifiedFlag().equals(CONSTANTS.Yes)){
-            entityResponse.setEntity(null);
+            System.out.println("test" +branch.getDeletedFlag());
+        if(branch.getDeletedFlag().equals(CONSTANTS.Yes)){
+            entityResponse.setEntity(branchService.updateBranch(branch));
             entityResponse.setStatusCode(HttpStatus.NO_CONTENT.value());
             entityResponse.setMessage(Messages.RECORD_DELETED);
             return ResponseEntity.status(HttpStatus.OK).body(entityResponse);
-        } else if (branch.getDeletedFlag().equals(CONSTANTS.Yes) && branch.getVerifiedFlag().equals(CONSTANTS.No)){
-            entityResponse.setEntity(null);
-            entityResponse.setMessage(Messages.RECORD_DELETED);
-            entityResponse.setStatusCode(HttpStatus.NO_CONTENT.value());
-            return ResponseEntity.status(HttpStatus.OK).body(entityResponse);
-        }else if (branch.getDeletedFlag().equals(CONSTANTS.No) && branch.getVerifiedFlag().equals(CONSTANTS.Yes)){
-            entityResponse.setEntity(null);
+        }
+                else {
+            entityResponse.setEntity(branchService.updateBranch(branch));
             entityResponse.setMessage(Messages.RECORD_UPDATED);
             entityResponse.setStatusCode(HttpStatus.OK.value());
             return ResponseEntity.ok().body(entityResponse);
-        }else{
-            entityResponse.setEntity(null);
-            entityResponse.setMessage(Messages.RECORD_FOUND);
-            entityResponse.setStatusCode(HttpStatus.OK.value());
-            return ResponseEntity.ok().body(entityResponse);
         }
+//        else if (branch.getDeletedFlag().equals(CONSTANTS.Yes) && branch.getVerifiedFlag().equals(CONSTANTS.No)){
+//            entityResponse.setEntity(null);
+//            entityResponse.setMessage(Messages.RECORD_DELETED);
+//            entityResponse.setStatusCode(HttpStatus.NO_CONTENT.value());
+//            return ResponseEntity.status(HttpStatus.OK).body(entityResponse);
+//        }
+
+//        else{
+//            entityResponse.setEntity(null);
+//            entityResponse.setMessage(Messages.RECORD_FOUND);
+//            entityResponse.setStatusCode(HttpStatus.OK.value());
+//            return ResponseEntity.ok().body(entityResponse);
+//        }
     }
 
 
