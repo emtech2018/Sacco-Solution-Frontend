@@ -45,7 +45,7 @@
       </div>
       <br>
       <div class="row" *ngIf="glTabCode == 1" >
-        <div class="col-md-5" *ngIf="glTabIndex">
+        <div class="col-md-5" *ngIf="glTabIndex !=1">
           <div class="form-group row">
             <div class="col-md-5 col-12 form-column">
               <label class="start pull-left"
@@ -74,7 +74,7 @@
       </div>
        <br>
       <div class="row" *ngIf="glTabCode == 2" >
-        <div class="col-md-5" *ngIf="glTabIndex">
+        <div class="col-md-5" *ngIf="glTabIndex !=1">
           <div class="form-group row">
             <div class="col-md-5 col-12 form-column">
               <label class="start pull-left"
@@ -90,7 +90,7 @@
           </div>
         </div>
 
-        <div class="col-md-2 offset-md-3 col-3 mt-2">
+        <div class="col-md-2 offset-md-8 col-3 mt-2">
           <button
             mat-raised-button
             color="primary"
