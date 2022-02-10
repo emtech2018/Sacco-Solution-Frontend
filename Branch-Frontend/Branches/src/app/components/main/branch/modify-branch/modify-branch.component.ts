@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Branch } from 'src/app/interfaces/branch';
 import { Response } from 'src/app/interfaces/response';
 import { BranchService } from 'src/app/services/branch.service';
 
@@ -9,7 +10,8 @@ import { BranchService } from 'src/app/services/branch.service';
   styleUrls: ['./modify-branch.component.css']
 })
 export class ModifyBranchComponent implements OnInit {
-  branch: Response = this.route.snapshot.data['branch'];
+  response: Response = this.route.snapshot.data['branch'];
+  branch : Branch = this.response.entity
   branchDescription !: string;
   email !: string;
   location !: string;
@@ -23,7 +25,7 @@ export class ModifyBranchComponent implements OnInit {
   }
 
   submitBranch(){
-    this.branchService.updateBranch(this.branch.entity).subscribe(
+    this.branchService.updateBranch(this.branch).subscribe(
       data =>{
         this.router.navigate(['success'],{
           state:{

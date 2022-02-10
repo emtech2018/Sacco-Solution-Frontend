@@ -14,7 +14,7 @@
                                 Branch Code<span class="warning">*</span></label>
                         </div>
                         <div class="col-md-6 col-8 form-column">
-                            <input type="text" value="{{this.branch.entity.solCode}}" name="solCode">
+                            <input type="text" value="{{branch.solCode}}" name="solCode" readonly>
                             <br>
                             <!-- <span *ngIf="this.show==true" style="color: red; font: size 6px;;">*Branch Code already exists!!</span> -->
                         </div> 
@@ -28,7 +28,7 @@
                             </label>
                         </div>
                         <div class="col-md-5">
-                            <input type="text" name="branchDescription" value="{{this.branch.entity.branchDescription}}" readonly >
+                            <input type="text" name="branchDescription" value="{{branch.branchDescription}}" readonly >
                         </div>
 
                     </div>
@@ -46,7 +46,7 @@
                         </div>
                         <div class="col-md-6 col-8 form-column">
                             <input type="text" name="email"
-                            value="{{this.branch.entity.email}}" readonly>
+                            value="{{branch.email}}" readonly>
                         </div> 
                     </div>
                 </div>
@@ -58,7 +58,7 @@
                             </label>
                         </div>
                         <div class="col-md-5">
-                            <input type="text" name="phoneNumber" value="{{this.branch.entity.phoneNumber}}" readonly >
+                            <input type="text" name="phoneNumber" value="{{branch.phoneNumber}}" readonly >
                         </div>
 
                     </div>
@@ -76,7 +76,7 @@
                             </label>
                         </div>
                         <div class="col-md-5">
-                            <input type="text" name="location" value="{{this.branch.entity.location}}" readonly >
+                            <input type="text" name="location" value="{{branch.location}}" readonly >
                         </div>
 
                     </div>

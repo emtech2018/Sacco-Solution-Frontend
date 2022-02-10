@@ -14,7 +14,7 @@
                                 Branch Code<span class="warning">*</span></label>
                         </div>
                         <div class="col-md-6 col-8 form-column">
-                            <input type="text" value="{{this.branch.entity.solCode}}" readonly>
+                            <input type="text" value="{{branch.solCode}}" readonly>
                             <br>
                             <!-- <span *ngIf="this.show==true" style="color: red; font: size 6px;;">*Branch Code already exists!!</span> -->
                         </div> 
@@ -28,7 +28,7 @@
                             </label>
                         </div>
                         <div class="col-md-5">
-                            <input type="text" name="branchDescription" [(ngModel)] ="this.branch.entity.branchDescription" oninput="this.value=this.value" >
+                            <input type="text" name="branchDescription" [(ngModel)] ="branch.branchDescription" oninput="this.value=this.value" >
                         </div>
 
                     </div>
@@ -45,7 +45,7 @@
                                 Email<span class="warning">*</span></label>
                         </div>
                         <div class="col-md-6 col-8 form-column">
-                            <input type="text" name="email" [(ngModel)] = "this.branch.entity.email" oninput="this.value=this.value">
+                            <input type="text" name="email" [(ngModel)] = "branch.email" oninput="this.value=this.value">
                         </div> 
                     </div>
                 </div>
@@ -57,7 +57,7 @@
                             </label>
                         </div>
                         <div class="col-md-5">
-                            <input type="text" name="phoneNumber" [(ngModel)] ="this.branch.entity.phoneNumber" oninput="this.value=this.value">
+                            <input type="text" name="phoneNumber" [(ngModel)] ="branch.phoneNumber" oninput="this.value=this.value">
                         </div>
 
                     </div>
@@ -75,7 +75,7 @@
                             </label>
                         </div>
                         <div class="col-md-5">
-                            <input type="text" name="location" [(ngModel)] ="this.branch.entity.location" oninput="this.value=this.value" >
+                            <input type="text" name="location" [(ngModel)] ="branch.location" oninput="this.value=this.value" >
                         </div>
 
                     </div>
