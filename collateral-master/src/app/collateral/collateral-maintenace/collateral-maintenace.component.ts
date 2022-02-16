@@ -154,7 +154,7 @@ export class CollateralMaintenaceComponent implements OnInit {
        }else{this.available = false }}
      console.log('Check availability', this.available);
      
-     this.loading = true;
+     this.loading = false;
      this.submitted = true;
       if(this.formData.valid ){
         console.log("test",this.available)
