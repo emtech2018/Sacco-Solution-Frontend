@@ -24,6 +24,9 @@ export class MainKycComponent implements OnInit {
     this.customerTabIndex = value.target.value;
    
 }
+param(){
+  this.router.navigate(['param']);
+}
 navigate(){
   if (this. customerTypeTabIndex == 1 && this.customerTabIndex==1) {
     this.router.navigate(['retail-add']);

@@ -20,6 +20,11 @@ import {RetailResolver} from 'src/app/resolvers/retail.resolver'
 import { SuccessComponent} from 'src/app/components/status/success/success.component'
 import {FailureComponent} from 'src/app/components/status/failure/failure.component'
 
+//params
+import {ParamInquireComponent} from 'src/app/components/params/param-inquire/param-inquire.component'
+import {ParamAddComponent} from 'src/app/components/params/param-add/param-add.component'
+import {ParamMainComponent} from 'src/app/components/params/param-main/param-main.component'
+
 const routes: Routes = [
   {path: 'kyc', component: MainKycComponent},
 
@@ -27,10 +32,17 @@ const routes: Routes = [
   {path: 'retail-inquire/:id', component: RetailInquireComponent, resolve: {customer: RetailResolver}},
   {path: 'retail-modify/:id', component: RetailModifyComponent, resolve: {customer: RetailResolver}},
   {path: 'retail-delete/:id', component: RetailDeleteComponent, resolve: {customer: RetailResolver}},
+
   {path: 'corporate-add', component: CorporateAddComponent},
   {path: 'corporate-inquire/:id', component: CorporateInquireComponent, resolve: {customer: CorporateResolver}},
   {path: 'corporate-modify/:id', component: CorporateModifyComponent, resolve: {customer: CorporateResolver}},
   {path: 'corporate-delete/:id', component: CorporateDeleteComponent, resolve: {customer: CorporateResolver}},
+
+  {path: 'param-add', component: ParamAddComponent},
+  {path: 'param-inquire', component: ParamInquireComponent},
+  {path: 'param', component: ParamMainComponent},
+  
+  
 
   
   {path: 'success', component: SuccessComponent},

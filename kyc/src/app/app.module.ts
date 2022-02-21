@@ -40,6 +40,9 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatTabsModule} from '@angular/material/tabs';
 import { FailureComponent } from './components/status/failure/failure.component';
 import { SuccessComponent } from './components/status/success/success.component';
+import { ParamAddComponent } from './components/params/param-add/param-add.component';
+import { ParamInquireComponent } from './components/params/param-inquire/param-inquire.component';
+import { ParamMainComponent } from './components/params/param-main/param-main.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +60,10 @@ import { SuccessComponent } from './components/status/success/success.component'
     RetailComponent,
     EmployerComponent,
     FailureComponent,
-    SuccessComponent
+    SuccessComponent,
+    ParamAddComponent,
+    ParamInquireComponent,
+    ParamMainComponent
   ],
   imports: [
     BrowserModule,

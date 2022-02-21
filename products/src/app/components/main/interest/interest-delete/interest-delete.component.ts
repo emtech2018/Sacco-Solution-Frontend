@@ -19,9 +19,13 @@ export class InterestDeleteComponent implements OnInit {
   ngOnInit(): void {
     for (let csl of this.interest.amountSlabs) {
       if(csl.drCr=="D"){
+        csl.deletedFlag="Y"
+        csl.deletedTime=new Date()
         this.dSlabs.push(csl)
       }
       else{
+        csl.deletedFlag="Y"
+        csl.deletedTime=new Date()
         this.cSlabs.push(csl)
       }
     }

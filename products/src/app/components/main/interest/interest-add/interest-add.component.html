@@ -204,7 +204,7 @@
 
           <div class="row container m-0 p-0 mb-2 mt-2" *ngIf="i==clength-1 && fullDiff=='D'">
             <div class="col-md-1 offset-md-10 col-4">
-              <button type="button" class="btn btn-danger" (click)="removeCSlab()">-</button>
+              <button *ngIf="clength>1" type="button" class="btn btn-danger" (click)="removeCSlab()">-</button>
             </div>
             <div class="col-md-1 col-4">
               <button type="button" class="btn btn-success" (click)="addCSlab()">+</button>
@@ -336,7 +336,7 @@
 
           <div class="row container m-0 p-0 mt-2"  *ngIf="i==dlength-1 && fullDiff=='D'">
             <div class="col-md-1 offset-md-10 col-4">
-              <button type="button" class="btn btn-danger" (click)="removeDSlab()">-</button>
+              <button *ngIf="dlength>1" type="button" class="btn btn-danger" (click)="removeDSlab()">-</button>
             </div>
             <div class="col-md-1 col-4">
               <button type="button" class="btn btn-success" (click)="addDSlab()">+</button>

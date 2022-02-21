@@ -33,6 +33,11 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatTabsModule} from '@angular/material/tabs';
+
+import {MatRadioModule} from "@angular/material/radio"
+import {MatCheckboxModule} from "@angular/material/checkbox"
+
+
 import { ProductComponent } from './components/lookup/product/product.component';
 import { AccountComponent } from './components/lookup/account/account.component';
 import { SuccessComponent } from './components/status/success/success.component';
@@ -106,7 +111,10 @@ import { OdProductComponent } from './components/lookup/od-product/od-product.co
     HttpClientModule,
     MatDialogModule,
     MatProgressSpinnerModule,
-    MatTabsModule
+    MatTabsModule,
+    MatRadioModule,
+    MatCheckboxModule
+
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]
