@@ -29,6 +29,7 @@ import { MatProgressSpinnerModule} from '@angular/material/progress-spinner'
 import { MatTableModule} from '@angular/material/table';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MatInputModule} from '@angular/material/input';
+import {MatRadioModule} from '@angular/material/radio';
 
 //status
 import { SuccessComponent } from './components/status/success/success.component';
@@ -66,7 +67,8 @@ import { FailureComponent } from './components/status/failure/failure.component'
     MatTableModule,
     FormsModule,
     HttpClientModule,
-    MatInputModule
+    MatInputModule,
+    MatRadioModule,
 
 
     
